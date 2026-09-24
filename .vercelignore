@@ -1,0 +1,8 @@
+docs/
+test/
+scripts/
+laya-service/
+eval-results/
+.github/
+*.md
+!README.md

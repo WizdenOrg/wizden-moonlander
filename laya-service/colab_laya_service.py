@@ -2,7 +2,7 @@
 
 In Colab, select Runtime > Change runtime type > T4 GPU, then run:
 
-    !wget -q https://raw.githubusercontent.com/<owner>/wizden-moonlander/main/laya-service/colab_laya_service.py
+    !wget -q https://raw.githubusercontent.com/WizdenOrg/wizden-moonlander/main/laya-service/colab_laya_service.py
     !python colab_laya_service.py
 
 Keep the cell running. It prints a temporary public URL and an API token for
@@ -132,6 +132,7 @@ def main() -> None:
         router.unload()
 
     app = FastAPI(title="Laya Colab GPU API", version="0.1.0", lifespan=lifespan)
+
 
     def require_token(x_api_key: str | None = Header(default=None)) -> None:
         if not secrets.compare_digest(x_api_key or "", API_TOKEN):

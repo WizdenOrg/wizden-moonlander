@@ -67,17 +67,38 @@ function restoreConnection() {
   renderProviderState();
 }
 function persistConnection() {
+  renderPilotOptions();
   try { localStorage.setItem(CONNECTION_STORAGE_KEY, JSON.stringify({ baseUrl: $('base-url').value.trim(), token: $('api-token').value, jevKey: $('jev-key').value.trim() })); } catch { /* storage unavailable */ }
   renderProviderState();
 }
 function clearConnection() {
   try { localStorage.removeItem(CONNECTION_STORAGE_KEY); } catch { /* storage unavailable */ }
   $('api-token').value = ''; $('jev-key').value = '';
-  renderProviderState();
+  renderProviderState(); renderPilotOptions();
 }
 function renderProviderState() {
   const laya = $('api-token').value ? 'LAYA ✓' : 'LAYA —', jev = $('jev-key').value ? 'JEV ✓' : 'JEV —';
   $('provider-state').textContent = `${laya} · ${jev}`;
+}
+// A pilot is offered only when its connection is filled in: Laya needs an http(s) endpoint and a
+// token, JEV needs a key. Side by side needs both.
+function pilotReady(pilot) {
+  if (pilot === 'jev') return Boolean($('jev-key').value.trim());
+  return /^https?:\/\/\S+$/i.test($('base-url').value.trim()) && Boolean($('api-token').value);
+}
+function availableModes() {
+  const laya = pilotReady('laya'), jev = pilotReady('jev');
+  return [laya && 'laya', jev && 'jev', laya && jev && 'duel'].filter(Boolean);
+}
+function renderPilotOptions() {
+  const modes = availableModes();
+  document.querySelectorAll('#pilot-control button').forEach((b) => { b.hidden = !modes.includes(b.dataset.pilots); });
+  $('pilot-control').classList.toggle('is-empty', !modes.length);
+  // Keep the selection valid, but never switch pilots under a running campaign.
+  if (modes.length && !modes.includes(settings.pilots) && !running && !(campaign.current && mission)) {
+    settings.pilots = modes.includes('laya') ? 'laya' : modes[0];
+    saveSettings(); renderSettings(); resetGame();
+  }
 }
 function missingKeys() {
   return activePilots().filter((pilot) => !connectionFor(pilot).token).map((pilot) => PILOTS[pilot].label);
@@ -140,16 +161,22 @@ function flightControls(flight) {
   return P.manualControls({ yawLeft: keys.KeyA || keys.ArrowLeft, yawRight: keys.KeyD || keys.ArrowRight, thrust: (keys.KeyW || keys.Space) && !keys.KeyS });
 }
 
+// One model call through this site's relay (/api/lander/decide).
+async function callModel(telemetry, connection, briefing) {
+  const response = await fetch('/api/lander/decide', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ telemetry, connection, briefing }) });
+  const data = await response.json().catch(() => ({ error: `Relay answered HTTP ${response.status}.` }));
+  if (!response.ok) throw new Error(data.error || 'Provider request failed.');
+  return data;
+}
+
 // One live decision for a flight's current snapshot. Returns the relay payload, or null when the
 // mission changed meanwhile or the provider failed (which pauses the campaign).
 async function fetchDecision(flight) {
   const serial = missionSerial, snapshot = P.telemetry(terrain, flight.ship);
   flight.view.fields.timer.textContent = 'requesting live control...';
   try {
-    const response = await fetch('/api/lander/decide', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ telemetry: snapshot, connection: connectionFor(flight.pilot), briefing: campaign.current?.briefing || '' }) });
-    const data = await response.json();
+    const data = await callModel(snapshot, connectionFor(flight.pilot), campaign.current?.briefing || '');
     if (serial !== missionSerial || flight.simEnded) return null;
-    if (!response.ok) throw new Error(data.error || 'Provider request failed.');
     flight.record.counts[data.action] = (flight.record.counts[data.action] || 0) + 1;
     flight.lastAnswerMs = data.latencyMs || 0;
     recordRequest(flight, data);
@@ -441,8 +468,7 @@ async function runExamples() {
   const briefing = settings.briefing.trim(); let failed = false;
   await Promise.all(specExamples.flatMap((e) => pilots.flatMap((pilot) => ['binary', 'facts'].map(async (mode) => {
     try {
-      const response = await fetch('/api/lander/decide', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ telemetry: e.fullTelemetry, connection: { ...connectionFor(pilot), variant: mode }, briefing: mode === 'facts' ? briefing : '' }) });
-      const data = await response.json(); if (!response.ok) throw new Error(data.error);
+      const data = await callModel(e.fullTelemetry, { ...connectionFor(pilot), variant: mode }, mode === 'facts' ? briefing : '');
       const answers = data.rawProviderOutput?.answers || {};
       ((exampleAnswers[mode] ||= {})[e.id] ||= {})[pilot] = { choice: data.action, scores: Object.fromEntries(Object.entries(answers).map(([k, v]) => [k, v?.noul])) };
     } catch (error) { failed = true; $('run-examples-status').textContent = `${PILOTS[pilot].label}: ${error.message}`; }
@@ -454,8 +480,7 @@ async function runExamples() {
   $('run-examples').disabled = false; showExample(currentExample);
 }
 async function loadSpec() {
-  let spec;
-  try { spec = await (await fetch('/api/lander/spec')).json(); } catch { return; }
+  const spec = LanderSpec.spec(); // built in the browser from the same modules the relay uses
   $('spec-providers').innerHTML = `<div class="spec-row spec-head"><span></span>${spec.providers.map((p) => `<span>${escapeHtml(p.label)}</span>`).join('')}</div>`
     + [['Endpoint', 'endpoint'], ['Auth header', 'auth'], ['Model', 'model']].map(([label, key]) => `<div class="spec-row"><span>${label}</span>${spec.providers.map((p) => `<span><code>${escapeHtml(p[key])}</code></span>`).join('')}</div>`).join('')
     + `<div class="spec-row"><span>Body</span>${spec.providers.map(() => '<span><code>state</code> + <code>questions</code> (identical)</span>').join('')}</div>`;
@@ -706,5 +731,5 @@ $('clear-connection').addEventListener('click', clearConnection);
 addEventListener('keydown', (event) => { if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowLeft', 'ArrowRight', 'Space'].includes(event.code)) { if (!autopilot) event.preventDefault(); keys[event.code] = true; } });
 addEventListener('keyup', (event) => { keys[event.code] = false; });
 
-loadSpec(); makeStars(); restoreConnection(); loadSettings(); renderSettings(); loadCampaign(); CampaignBoard.render(campaign, P); resetGame();
+loadSpec(); makeStars(); restoreConnection(); loadSettings(); renderSettings(); renderPilotOptions(); loadCampaign(); CampaignBoard.render(campaign, P); resetGame();
 requestAnimationFrame(loop); requestAnimationFrame(draw);

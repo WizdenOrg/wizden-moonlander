@@ -496,3 +496,8 @@ dl div { border-left-color: var(--line); }
 .example-json-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 @media (max-width: 1100px) { .example-view { grid-template-columns: 1fr 1fr; } .example-json-pair { grid-template-columns: 1fr; } }
 @media (max-width: 700px) { .example-view { grid-template-columns: 1fr; } .spec-compare .spec-row { grid-template-columns: 1fr; } }
+
+/* Pilot buttons appear only for configured connections. */
+.pilot-control button[hidden] { display: none; }
+.pilot-hint { display: none; padding: 0 12px; font: italic 12px Inter, sans-serif; color: var(--subtle); white-space: nowrap; }
+.pilot-control.is-empty .pilot-hint { display: inline; }

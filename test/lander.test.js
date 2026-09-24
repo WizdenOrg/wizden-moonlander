@@ -192,7 +192,7 @@ test('relay forwards the briefing and returns the exact request sent', async () 
   assert.equal(response.status, 200);
   assert.equal(body.request.state.mission_briefing, 'Conserve fuel.');
   assert.equal(JSON.stringify(body).includes('top-secret-token'), false);
-  const spec = await (await fetch(`${relayUrl}/api/lander/spec`)).json();
+  const spec = require('../public/lander-spec').spec();
   assert.equal(spec.variant, 'binary');
   assert.deepEqual(Object.keys(spec.example.request.questions), ['brake', 'go_right', 'go_left']);
   assert.equal(JSON.stringify(spec).includes('secret'), false);

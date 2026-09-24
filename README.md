@@ -15,7 +15,7 @@ It is also a small, honest experiment in *who does the reasoning*: a **guided** 
 Requires Node.js 18 or later. No dependencies.
 
 ```sh
-git clone https://github.com/<owner>/wizden-moonlander.git
+git clone https://github.com/WizdenOrg/wizden-moonlander.git
 cd wizden-moonlander
 npm start
 ```
@@ -27,7 +27,7 @@ You need access to at least one model:
 - **Laya**: any endpoint that serves Laya's typed-decision API (`POST /v1/decisions`, `X-API-Key` header). The quickest way is [`laya-service/colab_laya_service.py`](laya-service/colab_laya_service.py): run it in a Google Colab T4 runtime, and it prints a temporary public URL and an API token to paste into the top bar.
 - **JEV**: a Typesafe API key (`https://api.typesafe.ai/v1/systemone`, model `jev-latest`).
 
-Keys are stored in your browser only and sent only to the local server, which forwards them to the model and strips them from every response.
+Keys are stored in your browser only. Each decision goes to this app's own relay (`/api/lander/decide`), which calls the model and strips the key from its response. The relay is needed because JEV's API does not accept calls straight from a browser (CORS). The pilot buttons show only the models whose connection is filled in, and **SIDE BY SIDE** appears when both are.
 
 ## What you can do
 
@@ -43,7 +43,7 @@ Keys are stored in your browser only and sent only to the local server, which fo
 ## How a decision is made
 
 1. The browser simulates the flight (`public/lander-physics.js`) and takes a snapshot every 480 ms of flight time.
-2. The local relay (`server.js`) validates the snapshot and builds the request (`src/lander-adapter.js`).
+2. The relay validates the snapshot and builds the request (`public/lander-adapter.js`, shared with the page's tech specification).
 3. The snapshot becomes two short texts, vertical and sideways, and three yes/no questions: *brake now? push right? push left?*
 4. The model scores each question from 0 to 1. Braking wins at ≥ 0.5; otherwise the stronger sideways answer at ≥ 0.5; otherwise coast.
 5. The craft flies that maneuver until the next answer. Maneuvers use attitude hold, as in a real lander. Translation burns tilt to ±0.5 rad. The brake throttles down near 2.5 m/s, so it cannot climb, and it leans slightly against sideways drift.
@@ -54,7 +54,7 @@ Both models receive byte-identical state and questions; only the endpoint, auth 
 
 | | Guided | Facts only |
 | --- | --- | --- |
-| Who does the physics | The app's flight director (`src/lander-guidance.js`): stopping distance, target sideways speed, when to brake | The model, from measurements and the briefing's rules |
+| Who does the physics | The app's flight director (`public/lander-guidance.js`): stopping distance, target sideways speed, when to brake | The model, from measurements and the briefing's rules |
 | Example text | "DANGER: descending too fast. Falling at 14 m/s needs about 100 m to stop, but only 63 m of altitude remain. The engine must brake now." | "Altitude above the ground: 63 m. Vertical speed: falling at 14.0 m/s. Gravity adds 1.62 m/s … A braking burn removes about 3.2 m/s … Safe touchdown requires a downward speed below 4.5 m/s." |
 | The model's job | Confirm the stated conclusion | Work out the decision |
 
@@ -82,23 +82,43 @@ JEV_KEY=... npm run eval:lander -- --provider jev --variants binary,facts --rand
 ## Project layout
 
 ```
-public/            browser app: game, campaign board, shared flight model (lander-physics.js)
-src/               relay-side logic: request building and providers, flight director, headless simulator
-server.js          static files, tech-spec data, decision relay
+public/            the browser app, plus modules shared with Node:
+                   lander-physics.js (flight model), lander-guidance.js (flight director),
+                   lander-adapter.js (requests, providers, answer parsing), lander-spec.js (tech spec)
+src/relay.js       decision relay: validation, origin check, rate limit, endpoint guard, key redaction
+src/lander-sim.js  headless simulator for tests and evaluation
+server.js          local server: static files + relay
+api/lander/        the relay as a Vercel function (decide.js)
 scripts/           live evaluation
 test/              offline suite and live acceptance suite
 laya-service/      Colab script that serves Laya with a temporary public URL
 ```
 
+## Deploy to Vercel
+
+Import the repository in Vercel: no build step or settings are needed. `vercel.json` serves `public/` as static files and deploys `api/lander/decide.js` as a function (30 s limit), with the same security headers as the local server.
+
+Each decision is one short function call: about 500 per 10-mission campaign, a few milliseconds of CPU each, the rest spent waiting on the model. The tech specification is built in the browser and needs no function call.
+
+On Vercel the relay is public, so it protects itself:
+
+| Protection | Default | Setting |
+| --- | --- | --- |
+| Only its own page may call it (Origin/Referer must match the deployment host) | on | `RELAY_ALLOWED_ORIGINS`: extra origins, comma-separated |
+| Rate limit per client IP, per function instance (best effort) | 300 decisions/min | `RELAY_RATE_LIMIT` (0 = off); for a hard limit, add a Vercel Firewall rate-limit rule on `/api/lander/decide` |
+| Laya endpoint must be `https` and resolve to a public address | on | `LAYA_ALLOWED_HOSTS`, e.g. `*.trycloudflare.com` |
+| Model call timeout, below the function limit | 25 s | `PROVIDER_TIMEOUT_MS` |
+| JEV endpoint is fixed; request bodies are capped at 100 kB | on | none |
+
 ## Security notes
 
-- The server listens on `127.0.0.1` by default. The relay forwards requests to whatever Laya endpoint the page supplies, so only set `HOST=0.0.0.0` on a trusted network.
+- The local server listens on `127.0.0.1` by default. The relay forwards requests to whatever Laya endpoint the page supplies, so only set `HOST=0.0.0.0` on a trusted network, and then also set `RELAY_PUBLIC=1` to turn on the same protections as on Vercel.
 - API keys live in the browser's local storage. Use a private profile on shared machines, and **FORGET** in the top bar clears them.
 - The Colab service generates a fresh API token each run; its tunnel URL is public while the cell runs.
 
 ## Configuration
 
-See [`.env.example`](.env.example): `PORT` (default 3030) and `HOST` (default 127.0.0.1). Model credentials are entered in the page, not in environment variables. The environment variables are used only by the command-line tests and evaluation.
+See [`.env.example`](.env.example): `PORT` (default 3030), `HOST` (default 127.0.0.1), and the relay settings above. Model credentials are entered in the page, not in environment variables. The environment variables are used only by the command-line tests and evaluation.
 
 ## License
 
