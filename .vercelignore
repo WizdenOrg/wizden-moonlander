@@ -6,3 +6,5 @@ eval-results/
 .github/
 *.md
 !README.md
+# Local dev server only; on Vercel it would be detected as the app entrypoint and take over all routes.
+server.js
