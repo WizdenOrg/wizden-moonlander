@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#181d27"><title>Wizden Moon Lander</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/game-state.css"></head>
+<body>
+  <header class="topbar"><a class="brand" href="#game"><span>wizden</span> / moon lander</a><div class="connection" aria-label="Laya connection settings"><label>Laya endpoint <input id="base-url" placeholder="https://your-laya-endpoint" aria-label="Laya endpoint"></label><label>Laya token <input id="api-token" type="password" autocomplete="off" placeholder="Paste Colab API token" aria-label="Laya API token"></label><label>JEV API key <input id="jev-key" type="password" autocomplete="off" placeholder="Typesafe API key" aria-label="JEV API key"></label><button id="save-connection" class="connection-save">SAVE CONNECTION</button><button id="clear-connection" class="connection-clear">FORGET</button><b id="provider-state">READY</b></div></header>
+  <main id="game">
+    <section class="title"><div><p><i></i>SECTOR 11 / MARE TRANQUILLITATIS</p><h1>Moon <em>lander.</em></h1></div><div class="mission" aria-live="polite"><span></span><div><small>MISSION CONTROL</small><strong id="status">STANDING BY</strong><p id="status-detail">Autopilot awaits launch authorization.</p></div></div></section>
+    <section class="game-shell" aria-label="Moon lander game">
+      <div class="panes" id="panes" aria-live="off"></div>
+       <div class="objective"><b>LANDING OBJECTIVE</b><span>Moon gravity 1.62 m/s² · lunar clock x2.5 · gear limit: V &lt; 4.5, H &lt; 3.0, attitude &lt; 20°</span><span>Each mission moves the pad and launch point at random. In side-by-side mode both models fly the identical mission.</span></div><div class="countdown" id="countdown" hidden aria-live="assertive"></div>
+      <div class="outcome" id="outcome" hidden><p id="outcome-kicker">TOUCHDOWN</p><h2 id="outcome-title">SOFT LANDING</h2><p id="outcome-copy"></p><button id="retry">RUN 10 MORE</button></div>
+    </section>
+    <section class="controls"><div class="flight-controls"><button id="start">START 10 MISSIONS</button><button id="pause" disabled>PAUSE</button><button id="reset">RESET</button><button id="autopilot" class="active" aria-pressed="true">AUTOPILOT</button><span id="manual-hint">MODEL HAS CONTROL</span></div><div class="batch-settings"><div class="speed-control prompt-control" id="prompt-control" role="radiogroup" aria-label="Prompt mode"><span>PROMPT</span><button type="button" role="radio" data-prompt="binary" title="The flight director states what the physics requires; the model confirms it.">GUIDED</button><button type="button" role="radio" data-prompt="facts" title="Measurements and physics facts only; the model must work out the decision.">FACTS ONLY</button></div><div class="speed-control pilot-control" id="pilot-control" role="radiogroup" aria-label="Pilot"><span>PILOT</span><button type="button" role="radio" data-pilots="laya">LAYA</button><button type="button" role="radio" data-pilots="jev">JEV</button><button type="button" role="radio" data-pilots="duel">SIDE BY SIDE</button></div><label class="mission-count">MISSIONS <input id="mission-count" type="number" min="1" max="100" step="1" value="10" inputmode="numeric"></label><div class="speed-control" id="speed-control" role="radiogroup" aria-label="Simulation speed"><span>SPEED</span><button type="button" role="radio" data-speed="1">1×</button><button type="button" role="radio" data-speed="2">2×</button><button type="button" role="radio" data-speed="4">4×</button><button type="button" role="radio" data-speed="8">8×</button><button type="button" role="radio" data-speed="max">MAX</button></div></div><p>Manual mode: <kbd>W</kbd> thrust · <kbd>A</kbd><kbd>D</kbd> yaw · <kbd>S</kbd> coast</p></section>
+    <section class="briefing" id="briefing-section" aria-label="Mission briefing" hidden>
+      <label for="briefing"><span>MISSION // BRIEFING</span><small>Facts-only mode. Optional rules sent with every decision to every model for this campaign. Pick an example or write your own.</small></label>
+      <textarea id="briefing" rows="2" maxlength="500" placeholder="e.g. Conserve fuel: only brake when the descent is clearly too fast." spellcheck="true"></textarea>
+      <div class="briefing-footer"><div class="briefing-examples" id="briefing-examples" aria-label="Example briefings"></div><span class="briefing-count" id="briefing-count">0 / 500</span></div>
+    </section>
+    <section class="campaign" id="campaign" aria-label="Mission campaign results">
+      <header class="campaign-head">
+        <div class="campaign-title"><p>MISSION // CAMPAIGN</p><h2><span id="campaign-count">Ten</span> <em id="campaign-noun">landings.</em></h2><span id="campaign-progress">00 / 10 FLOWN</span><p class="campaign-briefing" id="campaign-briefing" hidden></p></div>
+        <div class="campaign-rings" id="campaign-rings"></div>
+        <dl class="campaign-stats" id="campaign-stats"></dl>
+      </header>
+      <div id="campaign-mix"></div>
+      <ol class="mission-grid" id="mission-grid"></ol>
+      <footer class="campaign-history" id="campaign-history"></footer>
+    </section>
+      <section class="lower-grid"><article class="panel decision-panel"><div class="panel-heading"><p>LIVE DECISION FEED</p><span id="feed-count">00 CALLS</span></div><ol id="decision-feed"><li class="empty">Live model commands appear after launch.</li></ol></article><article class="panel telemetry-panel"><div class="panel-heading"><p>THOUGHT / TELEMETRY</p><span id="request-id">NO REQUEST</span></div><dl><div><dt>Action</dt><dd id="panel-action">COAST</dd></div><div><dt>Phase</dt><dd id="phase">APPROACH</dd></div><div><dt>Terrain</dt><dd id="slope">0.00°</dd></div></dl><pre id="raw-output">Provider response is redacted before display.</pre></article></section>
+    <details class="tech-spec" id="tech-spec">
+      <summary><span>TECH // SPECIFICATION</span><b>How the lander talks to the models</b><i aria-hidden="true"></i></summary>
+      <div class="spec-body">
+        <section class="spec-block spec-wide">
+          <h3>How a decision is made</h3>
+          <ol class="spec-flow">
+            <li><b>Flight simulation</b><span>Runs the lunar physics in the browser. Every 480 ms of flight time it takes a snapshot: altitude, speeds, tilt, fuel, where the pad is.</span></li>
+            <li><b>Relay server</b><span>The page never calls a model directly. A small server checks the numbers, adds your API key, and strips keys from every response.</span></li>
+            <li><b>Situation text</b><span>The snapshot is written as two short texts, one vertical and one sideways. <em>Guided</em> texts state the conclusion; <em>facts-only</em> texts state just the numbers.</span></li>
+            <li><b>Model</b><span>Laya or JEV answers three yes/no questions in one call (brake? push right? push left?), each as a score from 0 to 1.</span></li>
+            <li><b>Control</b><span>The scores become one maneuver (brake, push left, push right, or coast). The craft flies it until the next answer.</span></li>
+          </ol>
+        </section>
+
+        <section class="spec-block spec-wide">
+          <h3>Guided vs facts only</h3>
+          <p>Both modes ask the model the same three questions and turn its answers into a control the same way. The only difference is the situation text, and that decides who does the physics.</p>
+          <div class="spec-table spec-compare">
+            <div class="spec-row spec-head"><span></span><span>Guided</span><span>Facts only</span></div>
+            <div class="spec-row"><span>Who does the physics</span><span>The app's flight director: stopping distance, target sideways speed, when it is time to brake.</span><span>The model, from raw measurements and the briefing's rules.</span></div>
+            <div class="spec-row"><span>What the text says</span><span>The conclusion: "DANGER: descending too fast … The engine must brake now", "Required sideways correction: accelerate to the RIGHT".</span><span>Only facts: altitude, speeds and directions, where the pad is, gravity and engine strength, safe limits, time to the ground and to the pad. No verdicts.</span></div>
+            <div class="spec-row"><span>The model's job</span><span>Read the conclusion and confirm it. It makes the final call, but the reasoning is already in the text.</span><span>Work out the decision itself.</span></div>
+            <div class="spec-row"><span>Mission briefing</span><span>Not used.</span><span>Optional rules sent with every decision (see below).</span></div>
+            <div class="spec-row"><span>JEV result</span><span><b>100%</b> of decisions match the plan · <b>32/32</b> landed</span><span>No briefing: <b>25%</b> · <b>0/6</b> (brakes every time and hovers until the fuel runs out). With the Flight rules briefing: <b>14/20</b> landed.</span></div>
+          </div>
+          <p>Pick a situation to see the same flight state written both ways, and the answers the flight plan expects. These are real inputs, built by the same code as every live request.</p>
+          <div class="example-tabs" id="example-tabs" role="tablist" aria-label="Example flight situations"></div>
+          <div class="example-view" id="example-view" role="tabpanel"></div>
+          <div class="example-run">
+            <button type="button" id="run-examples">ASK THE MODELS</button>
+            <span id="run-examples-status">Sends all six situations, in both modes, to each model with a saved key and shows the real scores. Facts-only requests include the current briefing.</span>
+          </div>
+        </section>
+
+        <section class="spec-block">
+          <h3>From answers to a control</h3>
+          <p id="spec-mapping"></p>
+          <p>Braking always wins when it is needed. Otherwise the stronger sideways answer wins, and if neither side is a clear yes, the craft coasts. Braking winning also means that once a model keeps braking near the ground, the craft can no longer move sideways.</p>
+        </section>
+
+        <section class="spec-block">
+          <h3>Mission briefing (facts only)</h3>
+          <p>An optional text of up to <span id="spec-briefing-max">500</span> characters, added to the state as <code>mission_briefing</code>; each question gets the sentence "Take the mission briefing into account." It is fixed when a campaign starts and saved with its results.</p>
+          <p>It is how you give the model decision rules. Rules written as a formula ("distance to stop is speed² ÷ 6") or as intent ("don't brake while high up") failed: the model stopped braking. Lookup tables work, because matching a number to a row is something the model can do. The "Flight rules" example uses tables plus "brake if altitude is below 50 m". The brake eases off at about 2.5 m/s and never climbs, so touchdowns are soft.</p>
+        </section>
+
+        <section class="spec-block">
+          <h3>Guided mode: flight director rules</h3>
+          <ul class="spec-list" id="spec-guidance"></ul>
+        </section>
+
+        <section class="spec-block">
+          <h3>Flight model</h3>
+          <ul class="spec-list" id="spec-physics"></ul>
+        </section>
+
+        <section class="spec-block">
+          <h3>Same input for both models</h3>
+          <p>Laya and JEV receive identical state and questions. Only the transport differs:</p>
+          <div class="spec-table" id="spec-providers"></div>
+          <p class="spec-check" id="spec-identical">In a side-by-side mission, the first decision is taken from the same snapshot for both models, and the two requests are compared here.</p>
+        </section>
+
+        <section class="spec-block">
+          <h3>Timing and speed</h3>
+          <ul class="spec-list">
+            <li>A decision is requested every <b>480 ms</b> of flight time.</li>
+            <li>Above 1× the simulation waits for each answer, then fast-forwards, so results do not depend on the speed setting. The real speed is capped by how fast the model answers (JEV takes about 0.74 s, so 4× plays at about 1.7×).</li>
+            <li>The screen replays the recorded flight smoothly, slightly behind the simulation, so waiting for answers never shows as stutter.</li>
+          </ul>
+        </section>
+
+        <section class="spec-block spec-wide">
+          <h3>Last request sent, per model</h3>
+          <div class="spec-requests">
+            <figure><figcaption>LAYA <span id="spec-endpoint-laya"></span></figcaption><pre id="spec-request-laya">No Laya request yet.</pre></figure>
+            <figure><figcaption>JEV <span id="spec-endpoint-jev"></span></figcaption><pre id="spec-request-jev">No JEV request yet.</pre></figure>
+          </div>
+        </section>
+
+        <section class="spec-block spec-wide">
+          <h3>Measured results</h3>
+          <div class="spec-table">
+            <div class="spec-row spec-head"><span>Prompt</span><span>Laya decisions</span><span>Laya landings</span><span>JEV decisions</span><span>JEV landings</span></div>
+            <div class="spec-row"><span>Original: raw telemetry numbers, one 4-way choice</span><span>28%</span><span>0/12</span><span>33%</span><span>—</span></div>
+            <div class="spec-row"><span>Guided</span><span>100%</span><span>31/32</span><span>100%</span><span>32/32</span></div>
+            <div class="spec-row"><span>Facts only, no briefing</span><span>—</span><span>—</span><span>25%</span><span>0/6</span></div>
+            <div class="spec-row"><span>Facts only + "Flight rules" briefing</span><span>—</span><span>—</span><span>—</span><span>14/20</span></div>
+          </div>
+          <p class="spec-note">Decisions: agreement with the flight plan on 120–160 labelled flight states. Landings: fixed and random missions in the headless simulator. A dash means not measured: Laya's endpoint was offline for the facts-only runs, and briefing tuning was judged on landings, not decisions. The original prompt is why guided mode exists: with raw numbers, Laya answered "push left" and JEV "push right" for almost every state.</p>
+        </section>
+      </div>
+    </details>
+  </main><script src="/lander-physics.js"></script><script src="/campaign.js"></script><script src="/app.js"></script>
+</body></html>

@@ -1,0 +1,26 @@
+{
+  "name": "wizden-moon-lander",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A lunar lander flown by typed-decision models (Laya, JEV): campaigns, side-by-side model comparison, and a headless evaluation suite.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "test:live": "node --test test/lander-live.test.js",
+    "eval:lander": "node scripts/lander-eval.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "laya",
+    "jev",
+    "llm",
+    "decision-model",
+    "moon-lander",
+    "simulation",
+    "evaluation"
+  ],
+  "license": "MIT"
+}
