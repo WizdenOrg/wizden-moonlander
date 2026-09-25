@@ -1,0 +1,150 @@
+[
+ {
+  "name": "default start (pad 240m right)",
+  "ship": {}
+ },
+ {
+  "name": "pad 400m right",
+  "ship": {
+   "x": 1000
+  }
+ },
+ {
+  "name": "pad 300m left",
+  "ship": {
+   "x": 1700,
+   "vx": -0.5
+  }
+ },
+ {
+  "name": "pad 500m left, drifting away",
+  "ship": {
+   "x": 1900,
+   "vx": 0.6
+  }
+ },
+ {
+  "name": "nearly overhead, tilted",
+  "ship": {
+   "x": 1440,
+   "a": -0.4
+  }
+ },
+ {
+  "name": "pad 600m right, fast drift away",
+  "ship": {
+   "x": 800,
+   "vx": -1.2
+  }
+ },
+ {
+  "name": "random #1 (seed 7, pad 341)",
+  "padCenter": 341,
+  "ship": {
+   "x": 930.61,
+   "y": 281.84,
+   "vx": 0.06,
+   "vy": 0.61,
+   "a": -0.02
+  }
+ },
+ {
+  "name": "random #2 (seed 7, pad 742)",
+  "padCenter": 742,
+  "ship": {
+   "x": 1220.42,
+   "y": 211.25,
+   "vx": -1.03,
+   "vy": 1.15,
+   "a": 0.01
+  }
+ },
+ {
+  "name": "random #3 (seed 7, pad 667)",
+  "padCenter": 667,
+  "ship": {
+   "x": 385.04,
+   "y": 255.56,
+   "vx": -0.61,
+   "vy": 1.47,
+   "a": -0.15
+  }
+ },
+ {
+  "name": "random #4 (seed 7, pad 1865)",
+  "padCenter": 1865,
+  "ship": {
+   "x": 1650.35,
+   "y": 194.74,
+   "vx": -0.63,
+   "vy": 0.82,
+   "a": 0.16
+  }
+ },
+ {
+  "name": "random #5 (seed 7, pad 451)",
+  "padCenter": 451,
+  "ship": {
+   "x": 850.17,
+   "y": 269.46,
+   "vx": 0.54,
+   "vy": 1.45,
+   "a": 0.07
+  }
+ },
+ {
+  "name": "random #6 (seed 7, pad 1941)",
+  "padCenter": 1941,
+  "ship": {
+   "x": 2108.99,
+   "y": 197.99,
+   "vx": -0.43,
+   "vy": 0.64,
+   "a": -0.29
+  }
+ },
+ {
+  "name": "random #7 (seed 7, pad 475)",
+  "padCenter": 475,
+  "ship": {
+   "x": 791.04,
+   "y": 238.27,
+   "vx": -0.09,
+   "vy": 1.42,
+   "a": 0.12
+  }
+ },
+ {
+  "name": "random #8 (seed 7, pad 1531)",
+  "padCenter": 1531,
+  "ship": {
+   "x": 1220.65,
+   "y": 192.21,
+   "vx": -1.1,
+   "vy": 1.37,
+   "a": -0.11
+  }
+ },
+ {
+  "name": "random #9 (seed 7, pad 655)",
+  "padCenter": 655,
+  "ship": {
+   "x": 956.55,
+   "y": 176.98,
+   "vx": 0.55,
+   "vy": 1.38,
+   "a": 0.03
+  }
+ },
+ {
+  "name": "random #10 (seed 7, pad 1775)",
+  "padCenter": 1775,
+  "ship": {
+   "x": 1211.05,
+   "y": 188.73,
+   "vx": 0.09,
+   "vy": 0.97,
+   "a": 0.23
+  }
+ }
+]

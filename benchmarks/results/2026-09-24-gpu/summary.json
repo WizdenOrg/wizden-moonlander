@@ -1,0 +1,2780 @@
+{
+  "runId": "2026-09-24T16-06-50",
+  "startedAt": "2026-09-24T16:06:50.248Z",
+  "node": "v22.23.1",
+  "perLabel": 40,
+  "seed": 7,
+  "scenarios": 16,
+  "latencies": [
+    150,
+    300
+  ],
+  "probes": 160,
+  "thresholds": {
+    "brake": 0.5,
+    "sideways": 0.5
+  },
+  "cases": {
+    "numeric": {
+      "label": "Raw telemetry, one 4-way choice",
+      "briefing": null
+    },
+    "guided_choice4": {
+      "label": "Guided sentences, one 4-way choice (reconstructed)",
+      "briefing": null
+    },
+    "guided_brake_choice": {
+      "label": "Guided sentences, brake yes/no + sideways choice (reconstructed)",
+      "briefing": null
+    },
+    "guided": {
+      "label": "Guided sentences, three yes/no",
+      "briefing": null
+    },
+    "computed": {
+      "label": "Computed numbers + rule, no verdict (new)",
+      "briefing": null
+    },
+    "facts": {
+      "label": "Facts only",
+      "briefing": null
+    },
+    "facts_formula": {
+      "label": "Facts only + formula briefing",
+      "briefing": "Only brake when the distance needed to stop is larger than the altitude. Distance needed to stop is about (falling speed x falling speed) / 6 metres, plus 3 seconds of falling. Otherwise do not brake: coast or move sideways. Move sideways toward the pad; if the craft is close to the pad and moving fast toward it, push the other way to slow down."
+    },
+    "facts_intent": {
+      "label": "Facts only + intent briefing",
+      "briefing": "Do not brake while high up. Let the craft fall and only brake near the ground. Use sideways burns to get over the pad early."
+    },
+    "facts_braking_table": {
+      "label": "Facts only + braking table briefing",
+      "briefing": "Braking rule: falling 5 m/s, brake below 25 m altitude. Falling 10 m/s, brake below 60 m. Falling 15 m/s, brake below 110 m. Falling 20 m/s, brake below 170 m. Falling faster than 22 m/s, always brake. Above those altitudes do not brake. Sideways: accelerate toward the pad until moving about 10 m/s toward it; when less than 100 m from the pad and moving faster than 5 m/s toward it, accelerate away from the pad."
+    },
+    "facts_flight_rules": {
+      "label": "Facts only + flight rules briefing",
+      "briefing": "Default: no burn. Brake if altitude is below 50 m, or below this altitude for the falling speed: 10 m/s: 90 m. 15 m/s: 150 m. 20 m/s: 220 m. Over 20 m/s: always. Sideways target speed toward the pad: pad over 200 m away: 12 m/s. 100 m: 10. 50 m: 6. 20 m: 2. Below the craft: 0. Accelerate toward the pad only if slower than target by more than 2 m/s, or moving away. Accelerate away from the pad only if faster than target by more than 2 m/s. Otherwise no sideways burn."
+    }
+  },
+  "results": {
+    "laya": {
+      "latency": {
+        "calls": 100,
+        "clientP50": 244,
+        "clientP95": 325.1,
+        "serverP50": 50.5,
+        "serverP95": 54.7,
+        "retries": 0,
+        "models": {
+          "english": 100
+        },
+        "repos": [
+          "convaiinnovations/laya"
+        ],
+        "devices": [
+          "cuda"
+        ],
+        "failed": 0
+      },
+      "numeric": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 40,
+          "accuracy": 0.25,
+          "ci95": [
+            0.1893,
+            0.3224
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 37,
+              "coast": 3
+            },
+            "right_thrust": {
+              "left_thrust": 36,
+              "coast": 4
+            },
+            "thrust": {
+              "left_thrust": 34,
+              "coast": 6
+            },
+            "coast": {
+              "left_thrust": 37,
+              "coast": 3
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 15
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 2
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 19
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 1
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 0
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 0
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 3
+            }
+          },
+          "scoreStats": {}
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.029,
+          "decisions": 3236,
+          "actionMix": {
+            "left_thrust": 3156,
+            "right_thrust": 1,
+            "thrust": 0,
+            "coast": 79
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 3407,
+          "clientP50": 240.2,
+          "clientP95": 279.5,
+          "serverP50": 47.2,
+          "serverP95": 55.9,
+          "retries": 0,
+          "models": {
+            "english": 3407
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 213
+      },
+      "guided_choice4": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 110,
+          "accuracy": 0.6875,
+          "ci95": [
+            0.612,
+            0.7542
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 40
+            },
+            "right_thrust": {
+              "right_thrust": 40
+            },
+            "thrust": {
+              "left_thrust": 23,
+              "coast": 16,
+              "right_thrust": 1
+            },
+            "coast": {
+              "left_thrust": 10,
+              "coast": 30
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 34
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 5
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 39
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 0
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 0
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 30
+            }
+          },
+          "scoreStats": {}
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.668,
+          "decisions": 2628,
+          "actionMix": {
+            "left_thrust": 741,
+            "right_thrust": 989,
+            "thrust": 0,
+            "coast": 898
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 2793,
+          "clientP50": 225.7,
+          "clientP95": 270.1,
+          "serverP50": 36.5,
+          "serverP95": 57,
+          "retries": 0,
+          "models": {
+            "english": 2793
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 173
+      },
+      "guided_brake_choice": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 160,
+          "accuracy": 1,
+          "ci95": [
+            0.9766,
+            1
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 40
+            },
+            "right_thrust": {
+              "right_thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "coast": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 34
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 5
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 39
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 40
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.851,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.126,
+                "aboveThreshold": 0
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 32,
+          "ci95": [
+            0.8928,
+            1
+          ],
+          "offPad": 0,
+          "crashed": 0,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 12,
+          "fixedTotal": 12,
+          "meanTouchdownVy": 2.51,
+          "meanMissLanded": 4.2,
+          "meanFuelLanded": 33.1,
+          "meanAgreement": 1,
+          "decisions": 1438,
+          "actionMix": {
+            "left_thrust": 182,
+            "right_thrust": 179,
+            "thrust": 402,
+            "coast": 675
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 1608,
+          "clientP50": 225.8,
+          "clientP95": 269.3,
+          "serverP50": 37.5,
+          "serverP95": 58.8,
+          "retries": 0,
+          "models": {
+            "english": 1608
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 98
+      },
+      "guided": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 160,
+          "accuracy": 1,
+          "ci95": [
+            0.9766,
+            1
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 40
+            },
+            "right_thrust": {
+              "right_thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "coast": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 34
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 5
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 39
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 40
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.851,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.126,
+                "aboveThreshold": 0
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.9,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.24,
+                "aboveThreshold": 0
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.862,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.215,
+                "aboveThreshold": 1
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 32,
+          "ci95": [
+            0.8928,
+            1
+          ],
+          "offPad": 0,
+          "crashed": 0,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 12,
+          "fixedTotal": 12,
+          "meanTouchdownVy": 2.51,
+          "meanMissLanded": 4.2,
+          "meanFuelLanded": 33.1,
+          "meanAgreement": 1,
+          "decisions": 1438,
+          "actionMix": {
+            "left_thrust": 182,
+            "right_thrust": 179,
+            "thrust": 402,
+            "coast": 675
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 1608,
+          "clientP50": 227.2,
+          "clientP95": 272,
+          "serverP50": 39.2,
+          "serverP95": 60.7,
+          "retries": 0,
+          "models": {
+            "english": 1608
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 99
+      },
+      "computed": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 33,
+          "accuracy": 0.2062,
+          "ci95": [
+            0.1508,
+            0.2755
+          ],
+          "confusion": {
+            "left_thrust": {
+              "coast": 37,
+              "left_thrust": 3
+            },
+            "right_thrust": {
+              "coast": 37,
+              "right_thrust": 3
+            },
+            "thrust": {
+              "left_thrust": 7,
+              "right_thrust": 14,
+              "coast": 19
+            },
+            "coast": {
+              "coast": 27,
+              "left_thrust": 6,
+              "right_thrust": 7
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 5
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 1
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 0
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 0
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 27
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.206,
+                "aboveThreshold": 0
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.21,
+                "aboveThreshold": 0
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.32,
+                "aboveThreshold": 3
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.373,
+                "aboveThreshold": 21
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.319,
+                "aboveThreshold": 4
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.346,
+                "aboveThreshold": 12
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.032,
+          "decisions": 594,
+          "actionMix": {
+            "left_thrust": 10,
+            "right_thrust": 11,
+            "thrust": 0,
+            "coast": 573
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 762,
+          "clientP50": 296.7,
+          "clientP95": 315.1,
+          "serverP50": 74.1,
+          "serverP95": 77.8,
+          "retries": 0,
+          "models": {
+            "english": 762
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 59
+      },
+      "facts": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 40,
+          "accuracy": 0.25,
+          "ci95": [
+            0.1893,
+            0.3224
+          ],
+          "confusion": {
+            "left_thrust": {
+              "thrust": 40
+            },
+            "right_thrust": {
+              "thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "thrust": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 0
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 0
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.851,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.865,
+                "aboveThreshold": 120
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.411,
+                "aboveThreshold": 8
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.406,
+                "aboveThreshold": 11
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.323,
+                "aboveThreshold": 0
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.337,
+                "aboveThreshold": 0
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.142,
+          "decisions": 2596,
+          "actionMix": {
+            "left_thrust": 0,
+            "right_thrust": 0,
+            "thrust": 2596,
+            "coast": 0
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 2769,
+          "clientP50": 253.5,
+          "clientP95": 302.3,
+          "serverP50": 59.4,
+          "serverP95": 68.4,
+          "retries": 0,
+          "models": {
+            "english": 2769
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 185
+      },
+      "facts_formula": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 40,
+          "accuracy": 0.25,
+          "ci95": [
+            0.1893,
+            0.3224
+          ],
+          "confusion": {
+            "left_thrust": {
+              "thrust": 40
+            },
+            "right_thrust": {
+              "thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "thrust": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 0
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 0
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.852,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.91,
+                "aboveThreshold": 120
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.679,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.635,
+                "aboveThreshold": 116
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.637,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.579,
+                "aboveThreshold": 101
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.142,
+          "decisions": 2596,
+          "actionMix": {
+            "left_thrust": 0,
+            "right_thrust": 0,
+            "thrust": 2596,
+            "coast": 0
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 2769,
+          "clientP50": 330.6,
+          "clientP95": 353,
+          "serverP50": 82.2,
+          "serverP95": 88.6,
+          "retries": 0,
+          "models": {
+            "english": 2769
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 236
+      },
+      "facts_intent": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 40,
+          "accuracy": 0.25,
+          "ci95": [
+            0.1893,
+            0.3224
+          ],
+          "confusion": {
+            "left_thrust": {
+              "thrust": 40
+            },
+            "right_thrust": {
+              "thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "thrust": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 0
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 0
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.859,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.883,
+                "aboveThreshold": 120
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.691,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.703,
+                "aboveThreshold": 119
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.717,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.704,
+                "aboveThreshold": 119
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.142,
+          "decisions": 2596,
+          "actionMix": {
+            "left_thrust": 0,
+            "right_thrust": 0,
+            "thrust": 2596,
+            "coast": 0
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 2769,
+          "clientP50": 283.5,
+          "clientP95": 311.5,
+          "serverP50": 70,
+          "serverP95": 77.9,
+          "retries": 0,
+          "models": {
+            "english": 2769
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 205
+      },
+      "facts_braking_table": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 40,
+          "accuracy": 0.25,
+          "ci95": [
+            0.1893,
+            0.3224
+          ],
+          "confusion": {
+            "left_thrust": {
+              "thrust": 40
+            },
+            "right_thrust": {
+              "thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "thrust": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 0
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 0
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.877,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.88,
+                "aboveThreshold": 120
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.559,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.54,
+                "aboveThreshold": 102
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.544,
+                "aboveThreshold": 28
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.526,
+                "aboveThreshold": 85
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.142,
+          "decisions": 2596,
+          "actionMix": {
+            "left_thrust": 0,
+            "right_thrust": 0,
+            "thrust": 2596,
+            "coast": 0
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 2769,
+          "clientP50": 362.6,
+          "clientP95": 380.9,
+          "serverP50": 90.3,
+          "serverP95": 95.3,
+          "retries": 0,
+          "models": {
+            "english": 2769
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 259
+      },
+      "facts_flight_rules": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 40,
+          "accuracy": 0.25,
+          "ci95": [
+            0.1893,
+            0.3224
+          ],
+          "confusion": {
+            "left_thrust": {
+              "thrust": 40
+            },
+            "right_thrust": {
+              "thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "thrust": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 0
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 0
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.924,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.914,
+                "aboveThreshold": 120
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.664,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.646,
+                "aboveThreshold": 119
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.588,
+                "aboveThreshold": 35
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.575,
+                "aboveThreshold": 118
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.142,
+          "decisions": 2596,
+          "actionMix": {
+            "left_thrust": 0,
+            "right_thrust": 0,
+            "thrust": 2596,
+            "coast": 0
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 2769,
+          "clientP50": 376.1,
+          "clientP95": 405.4,
+          "serverP50": 93.7,
+          "serverP95": 101.1,
+          "retries": 0,
+          "models": {
+            "english": 2769
+          },
+          "repos": [
+            "convaiinnovations/laya"
+          ],
+          "devices": [
+            "cuda"
+          ]
+        },
+        "seconds": 269
+      }
+    },
+    "jev": {
+      "latency": {
+        "calls": 100,
+        "clientP50": 258.5,
+        "clientP95": 305.4,
+        "serverP50": null,
+        "serverP95": null,
+        "retries": 0,
+        "models": {
+          "jev-1.13.0": 100
+        },
+        "repos": [],
+        "devices": [],
+        "failed": 0
+      },
+      "numeric": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 51,
+          "accuracy": 0.3187,
+          "ci95": [
+            0.2515,
+            0.3945
+          ],
+          "confusion": {
+            "left_thrust": {
+              "right_thrust": 40
+            },
+            "right_thrust": {
+              "right_thrust": 40
+            },
+            "thrust": {
+              "right_thrust": 29,
+              "thrust": 11
+            },
+            "coast": {
+              "right_thrust": 38,
+              "thrust": 2
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 18
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 3
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 18
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 1
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 1
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 10
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 0
+            }
+          },
+          "scoreStats": {}
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.239,
+          "decisions": 3081,
+          "actionMix": {
+            "left_thrust": 0,
+            "right_thrust": 1988,
+            "thrust": 1093,
+            "coast": 0
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 3253,
+          "clientP50": 248.2,
+          "clientP95": 295.8,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 3253
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 114
+      },
+      "guided_choice4": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 160,
+          "accuracy": 1,
+          "ci95": [
+            0.9766,
+            1
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 40
+            },
+            "right_thrust": {
+              "right_thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "coast": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 34
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 5
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 39
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 40
+            }
+          },
+          "scoreStats": {}
+        },
+        "flights": {
+          "total": 32,
+          "landed": 32,
+          "ci95": [
+            0.8928,
+            1
+          ],
+          "offPad": 0,
+          "crashed": 0,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 12,
+          "fixedTotal": 12,
+          "meanTouchdownVy": 2.51,
+          "meanMissLanded": 4.2,
+          "meanFuelLanded": 33.1,
+          "meanAgreement": 1,
+          "decisions": 1438,
+          "actionMix": {
+            "left_thrust": 182,
+            "right_thrust": 179,
+            "thrust": 402,
+            "coast": 675
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 1608,
+          "clientP50": 244,
+          "clientP95": 286.3,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 1608
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 57
+      },
+      "guided_brake_choice": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 160,
+          "accuracy": 1,
+          "ci95": [
+            0.9766,
+            1
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 40
+            },
+            "right_thrust": {
+              "right_thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "coast": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 34
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 5
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 39
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 40
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.965,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.043,
+                "aboveThreshold": 0
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 32,
+          "ci95": [
+            0.8928,
+            1
+          ],
+          "offPad": 0,
+          "crashed": 0,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 12,
+          "fixedTotal": 12,
+          "meanTouchdownVy": 2.51,
+          "meanMissLanded": 4.2,
+          "meanFuelLanded": 33.1,
+          "meanAgreement": 1,
+          "decisions": 1438,
+          "actionMix": {
+            "left_thrust": 182,
+            "right_thrust": 179,
+            "thrust": 402,
+            "coast": 675
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 1608,
+          "clientP50": 246.9,
+          "clientP95": 292.2,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 1608
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 55
+      },
+      "guided": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 160,
+          "accuracy": 1,
+          "ci95": [
+            0.9766,
+            1
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 40
+            },
+            "right_thrust": {
+              "right_thrust": 40
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "coast": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 34
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 5
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 39
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 40
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.965,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.043,
+                "aboveThreshold": 0
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.971,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.033,
+                "aboveThreshold": 0
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.975,
+                "aboveThreshold": 41
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.032,
+                "aboveThreshold": 0
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 32,
+          "ci95": [
+            0.8928,
+            1
+          ],
+          "offPad": 0,
+          "crashed": 0,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 12,
+          "fixedTotal": 12,
+          "meanTouchdownVy": 2.51,
+          "meanMissLanded": 4.2,
+          "meanFuelLanded": 33.1,
+          "meanAgreement": 1,
+          "decisions": 1438,
+          "actionMix": {
+            "left_thrust": 182,
+            "right_thrust": 179,
+            "thrust": 402,
+            "coast": 675
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 1608,
+          "clientP50": 244.6,
+          "clientP95": 290.1,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 1608
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 57
+      },
+      "computed": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 128,
+          "accuracy": 0.8,
+          "ci95": [
+            0.7313,
+            0.8546
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 28,
+              "coast": 9,
+              "thrust": 3
+            },
+            "right_thrust": {
+              "right_thrust": 29,
+              "coast": 8,
+              "thrust": 3
+            },
+            "thrust": {
+              "thrust": 33,
+              "coast": 6,
+              "right_thrust": 1
+            },
+            "coast": {
+              "coast": 38,
+              "thrust": 1,
+              "right_thrust": 1
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 23
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 4
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 29
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 1
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 3
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 38
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.792,
+                "aboveThreshold": 33
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.277,
+                "aboveThreshold": 7
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.712,
+                "aboveThreshold": 32
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.085,
+                "aboveThreshold": 2
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.685,
+                "aboveThreshold": 32
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.083,
+                "aboveThreshold": 0
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 32,
+          "ci95": [
+            0.8928,
+            1
+          ],
+          "offPad": 0,
+          "crashed": 0,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 12,
+          "fixedTotal": 12,
+          "meanTouchdownVy": 2.51,
+          "meanMissLanded": 4.5,
+          "meanFuelLanded": 33.6,
+          "meanAgreement": 0.871,
+          "decisions": 1424,
+          "actionMix": {
+            "left_thrust": 195,
+            "right_thrust": 185,
+            "thrust": 429,
+            "coast": 615
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 1595,
+          "clientP50": 246.7,
+          "clientP95": 293,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 1595
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 56
+      },
+      "facts": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 40,
+          "accuracy": 0.25,
+          "ci95": [
+            0.1893,
+            0.3224
+          ],
+          "confusion": {
+            "left_thrust": {
+              "thrust": 40
+            },
+            "right_thrust": {
+              "thrust": 39,
+              "coast": 1
+            },
+            "thrust": {
+              "thrust": 40
+            },
+            "coast": {
+              "thrust": 40
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 0
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 30
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 0
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.768,
+                "aboveThreshold": 40
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.661,
+                "aboveThreshold": 119
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.386,
+                "aboveThreshold": 16
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.316,
+                "aboveThreshold": 25
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.357,
+                "aboveThreshold": 5
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.288,
+                "aboveThreshold": 23
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.142,
+          "decisions": 2596,
+          "actionMix": {
+            "left_thrust": 0,
+            "right_thrust": 0,
+            "thrust": 2596,
+            "coast": 0
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 2769,
+          "clientP50": 246.7,
+          "clientP95": 294.2,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 2769
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 96
+      },
+      "facts_formula": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 41,
+          "accuracy": 0.2562,
+          "ci95": [
+            0.1949,
+            0.3291
+          ],
+          "confusion": {
+            "left_thrust": {
+              "coast": 38,
+              "left_thrust": 2
+            },
+            "right_thrust": {
+              "coast": 36,
+              "right_thrust": 4
+            },
+            "thrust": {
+              "coast": 29,
+              "right_thrust": 8,
+              "left_thrust": 3
+            },
+            "coast": {
+              "coast": 35,
+              "left_thrust": 2,
+              "right_thrust": 3
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 4
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 0
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 0
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 35
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.389,
+                "aboveThreshold": 0
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.31,
+                "aboveThreshold": 0
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.381,
+                "aboveThreshold": 5
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.307,
+                "aboveThreshold": 10
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.371,
+                "aboveThreshold": 2
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.293,
+                "aboveThreshold": 5
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.192,
+          "decisions": 619,
+          "actionMix": {
+            "left_thrust": 14,
+            "right_thrust": 17,
+            "thrust": 87,
+            "coast": 501
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 790,
+          "clientP50": 243.8,
+          "clientP95": 290.3,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 790
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 27
+      },
+      "facts_intent": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 42,
+          "accuracy": 0.2625,
+          "ci95": [
+            0.2005,
+            0.3357
+          ],
+          "confusion": {
+            "left_thrust": {
+              "coast": 38,
+              "left_thrust": 2
+            },
+            "right_thrust": {
+              "coast": 35,
+              "right_thrust": 4,
+              "left_thrust": 1
+            },
+            "thrust": {
+              "coast": 31,
+              "right_thrust": 6,
+              "left_thrust": 3
+            },
+            "coast": {
+              "coast": 36,
+              "left_thrust": 2,
+              "right_thrust": 2
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 0
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 4
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 0
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 0
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 0
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 36
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.284,
+                "aboveThreshold": 0
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.231,
+                "aboveThreshold": 0
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.367,
+                "aboveThreshold": 4
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.336,
+                "aboveThreshold": 8
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.38,
+                "aboveThreshold": 2
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.341,
+                "aboveThreshold": 6
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 0,
+          "ci95": [
+            0,
+            0.1072
+          ],
+          "offPad": 0,
+          "crashed": 32,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 0,
+          "fixedTotal": 12,
+          "meanTouchdownVy": null,
+          "meanMissLanded": null,
+          "meanFuelLanded": null,
+          "meanAgreement": 0.101,
+          "decisions": 611,
+          "actionMix": {
+            "left_thrust": 18,
+            "right_thrust": 19,
+            "thrust": 32,
+            "coast": 542
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 779,
+          "clientP50": 248.1,
+          "clientP95": 297.2,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 779
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 26
+      },
+      "facts_braking_table": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 70,
+          "accuracy": 0.4375,
+          "ci95": [
+            0.363,
+            0.5149
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 14,
+              "coast": 19,
+              "thrust": 6,
+              "right_thrust": 1
+            },
+            "right_thrust": {
+              "right_thrust": 13,
+              "coast": 20,
+              "thrust": 7
+            },
+            "thrust": {
+              "thrust": 24,
+              "coast": 15,
+              "right_thrust": 1
+            },
+            "coast": {
+              "coast": 19,
+              "thrust": 14,
+              "left_thrust": 4,
+              "right_thrust": 3
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 3
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 4
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 18
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 2
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 16
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 0
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 19
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.643,
+                "aboveThreshold": 24
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.332,
+                "aboveThreshold": 27
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.497,
+                "aboveThreshold": 20
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.341,
+                "aboveThreshold": 22
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.456,
+                "aboveThreshold": 18
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.299,
+                "aboveThreshold": 10
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 4,
+          "ci95": [
+            0.0497,
+            0.2807
+          ],
+          "offPad": 0,
+          "crashed": 28,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 1,
+          "fixedTotal": 12,
+          "meanTouchdownVy": 2.9,
+          "meanMissLanded": 19.8,
+          "meanFuelLanded": 36.4,
+          "meanAgreement": 0.478,
+          "decisions": 2065,
+          "actionMix": {
+            "left_thrust": 460,
+            "right_thrust": 482,
+            "thrust": 444,
+            "coast": 679
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 2234,
+          "clientP50": 249.5,
+          "clientP95": 299,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 2234
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 78
+      },
+      "facts_flight_rules": {
+        "probes": {
+          "total": 160,
+          "errors": 0,
+          "invalid": 0,
+          "correct": 85,
+          "accuracy": 0.5313,
+          "ci95": [
+            0.4541,
+            0.6069
+          ],
+          "confusion": {
+            "left_thrust": {
+              "left_thrust": 18,
+              "coast": 12,
+              "thrust": 9,
+              "right_thrust": 1
+            },
+            "right_thrust": {
+              "right_thrust": 16,
+              "coast": 12,
+              "thrust": 10,
+              "left_thrust": 2
+            },
+            "thrust": {
+              "thrust": 35,
+              "coast": 4,
+              "left_thrust": 1
+            },
+            "coast": {
+              "left_thrust": 6,
+              "thrust": 17,
+              "coast": 16,
+              "right_thrust": 1
+            }
+          },
+          "byReason": {
+            "overshoot_risk": {
+              "n": 34,
+              "ok": 8
+            },
+            "drifting_away": {
+              "n": 5,
+              "ok": 4
+            },
+            "too_slow_toward_pad": {
+              "n": 39,
+              "ok": 21
+            },
+            "not_moving_toward_pad": {
+              "n": 2,
+              "ok": 1
+            },
+            "overspeed": {
+              "n": 8,
+              "ok": 8
+            },
+            "stopping_distance": {
+              "n": 30,
+              "ok": 26
+            },
+            "far_from_pad": {
+              "n": 2,
+              "ok": 1
+            },
+            "on_plan": {
+              "n": 40,
+              "ok": 16
+            }
+          },
+          "scoreStats": {
+            "brake": {
+              "whenYes": {
+                "n": 40,
+                "mean": 0.705,
+                "aboveThreshold": 35
+              },
+              "whenNo": {
+                "n": 120,
+                "mean": 0.369,
+                "aboveThreshold": 36
+              }
+            },
+            "go_right": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.54,
+                "aboveThreshold": 20
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.275,
+                "aboveThreshold": 10
+              }
+            },
+            "go_left": {
+              "whenYes": {
+                "n": 41,
+                "mean": 0.501,
+                "aboveThreshold": 23
+              },
+              "whenNo": {
+                "n": 119,
+                "mean": 0.263,
+                "aboveThreshold": 18
+              }
+            }
+          }
+        },
+        "flights": {
+          "total": 32,
+          "landed": 22,
+          "ci95": [
+            0.5143,
+            0.8205
+          ],
+          "offPad": 1,
+          "crashed": 9,
+          "timedOut": 0,
+          "errors": 0,
+          "fixedLanded": 7,
+          "fixedTotal": 12,
+          "meanTouchdownVy": 2.53,
+          "meanMissLanded": 8.8,
+          "meanFuelLanded": 29.3,
+          "meanAgreement": 0.447,
+          "decisions": 1474,
+          "actionMix": {
+            "left_thrust": 218,
+            "right_thrust": 194,
+            "thrust": 368,
+            "coast": 694
+          },
+          "retries": 0
+        },
+        "calls": {
+          "calls": 1642,
+          "clientP50": 249.3,
+          "clientP95": 295.6,
+          "serverP50": null,
+          "serverP95": null,
+          "retries": 0,
+          "models": {
+            "jev-1.13.0": 1642
+          },
+          "repos": [],
+          "devices": []
+        },
+        "seconds": 57
+      }
+    }
+  },
+  "finishedAt": "2026-09-24T16:37:13.859Z"
+}

@@ -1,0 +1,4162 @@
+[
+ {
+  "id": 0,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 754.8919509066254,
+   "verticalVelocity": 11.44949585402227,
+   "horizontalVelocity": 11.266859833014834,
+   "orientation": 0,
+   "padOffset": -70.57113829445689,
+   "fuel": 89.19999999999959,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 758.1834495053201,
+    "deltaX": 70.57113829445689,
+    "deltaY": 754.8919509066254,
+    "bearing": 0.09321416789684692,
+    "closingSpeed": 12.448500942243154
+   }
+  }
+ },
+ {
+  "id": 1,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 645.5527333234895,
+   "verticalVelocity": 13.770561585313327,
+   "horizontalVelocity": 2.947826412946828,
+   "orientation": 0,
+   "padOffset": -6.941159591220185,
+   "fuel": 80.55999999999926,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 645.5900488683969,
+    "deltaX": 6.941159591220185,
+    "deltaY": 645.5527333234895,
+    "bearing": 0.010751859234919139,
+    "closingSpeed": 13.801459641448494
+   }
+  }
+ },
+ {
+  "id": 2,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 806.5728185247932,
+   "verticalVelocity": 1.2505466155676517,
+   "horizontalVelocity": 7.354664489588773,
+   "orientation": -0.5,
+   "padOffset": -21.54322255914508,
+   "fuel": 79.85799999999924,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 806.8604724617893,
+    "deltaX": 21.54322255914508,
+    "deltaY": 806.5728185247932,
+    "bearing": 0.026703232820767968,
+    "closingSpeed": 1.446470761916478
+   }
+  }
+ },
+ {
+  "id": 3,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "drifting_away",
+  "telemetry": {
+   "altitude": 327.54199292029705,
+   "verticalVelocity": 21.33970723816418,
+   "horizontalVelocity": 1.4761808630182338,
+   "orientation": 0,
+   "padOffset": 1.6323729501082198,
+   "fuel": 53.155999999998755,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 327.54606052836016,
+    "deltaX": -1.6323729501082198,
+    "deltaY": 327.54199292029705,
+    "bearing": -0.004983664601792952,
+    "closingSpeed": 21.332085472628496
+   }
+  }
+ },
+ {
+  "id": 4,
+  "scenario": "pad 400m right",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 807.8978573079262,
+   "verticalVelocity": -5.026320257905199,
+   "horizontalVelocity": 13.683164547580015,
+   "orientation": 0,
+   "padOffset": -313.04207899712014,
+   "fuel": 86.7699999999995,
+   "terrainSlope": 11.695935981668777,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 856.9679364141523,
+    "deltaX": 313.04207899712014,
+    "deltaY": 797.7460127252855,
+    "bearing": 0.37394464040886527,
+    "closingSpeed": 0.31935772761242887
+   }
+  }
+ },
+ {
+  "id": 5,
+  "scenario": "pad 300m left",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 763.6606103266045,
+   "verticalVelocity": 0.1,
+   "horizontalVelocity": -0.5,
+   "orientation": 0.02,
+   "padOffset": 300,
+   "fuel": 100,
+   "terrainSlope": -5.406020627374482,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 819.7657899857296,
+    "deltaX": -300,
+    "deltaY": 762.8996988011775,
+    "bearing": -0.3746622016265547,
+    "closingSpeed": 0.27604222162534614
+   }
+  }
+ },
+ {
+  "id": 6,
+  "scenario": "pad 300m left",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 783.26464270246,
+   "verticalVelocity": -5.711611676660506,
+   "horizontalVelocity": -10.429903229778127,
+   "orientation": -0.5,
+   "padOffset": 259.0633162356678,
+   "fuel": 89.73999999999961,
+   "terrainSlope": 4.237959249041756,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 823.8514333211931,
+    "deltaX": -259.0633162356678,
+    "deltaY": 782.059705116152,
+    "bearing": -0.31988134227321685,
+    "closingSpeed": -2.1421532493415194
+   }
+  }
+ },
+ {
+  "id": 7,
+  "scenario": "pad 300m left",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 769.0746904799041,
+   "verticalVelocity": -3.0520783668937685,
+   "horizontalVelocity": -7.1007722897105445,
+   "orientation": -0.5,
+   "padOffset": 280.6879364986353,
+   "fuel": 93.08799999999974,
+   "terrainSlope": -0.9562060421811562,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 816.7991341128579,
+    "deltaX": -280.6879364986353,
+    "deltaY": 767.0561307959495,
+    "bearing": -0.3507942258606448,
+    "closingSpeed": -0.42607085012155055
+   }
+  }
+ },
+ {
+  "id": 8,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 748.0716867570006,
+   "verticalVelocity": -3.032471922122776,
+   "horizontalVelocity": -5.0342504038844735,
+   "orientation": -0.5,
+   "padOffset": 490.9318751060448,
+   "fuel": 94.05999999999977,
+   "terrainSlope": 25.479883377481134,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 911.5163466833278,
+    "deltaX": -490.9318751060448,
+    "deltaY": 768.0155885630079,
+    "bearing": -0.5687605253386218,
+    "closingSpeed": 0.15632005172579808
+   }
+  }
+ },
+ {
+  "id": 9,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 478.6365960957547,
+   "verticalVelocity": 17.851492271038264,
+   "horizontalVelocity": -10.155106910149804,
+   "orientation": -0.5,
+   "padOffset": 136.81954655157256,
+   "fuel": 77.4199999999999,
+   "terrainSlope": -13.39342675823635,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 498.26657346406034,
+    "deltaX": -136.81954655157256,
+    "deltaY": 479.11375466901166,
+    "bearing": -0.2781643889249611,
+    "closingSpeed": 19.95380212228616
+   }
+  }
+ },
+ {
+  "id": 10,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 745.7818695977876,
+   "verticalVelocity": -4.693051466548128,
+   "horizontalVelocity": -8.63185964557041,
+   "orientation": -0.5,
+   "padOffset": 472.76333545494026,
+   "fuel": 90.44199999999964,
+   "terrainSlope": 27.35473147982914,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 907.5422851825525,
+    "deltaX": -472.76333545494026,
+    "deltaY": 774.6791774947155,
+    "bearing": -0.5479366500621401,
+    "closingSpeed": 0.4905749455887201
+   }
+  }
+ },
+ {
+  "id": 11,
+  "scenario": "nearly overhead, tilted",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "drifting_away",
+  "telemetry": {
+   "altitude": 762.8996988011775,
+   "verticalVelocity": 0.1,
+   "horizontalVelocity": 0.8,
+   "orientation": -0.4,
+   "padOffset": 40,
+   "fuel": 100,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 763.9476097422697,
+    "deltaX": -40,
+    "deltaY": 762.8996988011775,
+    "bearing": -0.0523835652260264,
+    "closingSpeed": 0.057975140330708934
+   }
+  }
+ },
+ {
+  "id": 12,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 222.7194007525917,
+   "verticalVelocity": 13.980975620664871,
+   "horizontalVelocity": 9.510299323715152,
+   "orientation": -0.5,
+   "padOffset": -31.704620229530747,
+   "fuel": 58.61999999999995,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 224.9646959313668,
+    "deltaX": 31.704620229530747,
+    "deltaY": 222.7194007525917,
+    "bearing": 0.14140227929762356,
+    "closingSpeed": 15.181737411547441
+   }
+  }
+ },
+ {
+  "id": 13,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 189.4695203866114,
+   "verticalVelocity": 18.315895184617954,
+   "horizontalVelocity": 7.597507873574761,
+   "orientation": -0.5,
+   "padOffset": -20.78097228024035,
+   "fuel": 60.258000000000195,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 190.60573958945903,
+    "deltaX": 20.78097228024035,
+    "deltaY": 189.4695203866114,
+    "bearing": 0.1092431082970102,
+    "closingSpeed": 19.03503789767998
+   }
+  }
+ },
+ {
+  "id": 14,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "not_moving_toward_pad",
+  "telemetry": {
+   "altitude": 753.539765915921,
+   "verticalVelocity": 0.61,
+   "horizontalVelocity": 0.06,
+   "orientation": -0.02,
+   "padOffset": 589.61,
+   "fuel": 100,
+   "terrainSlope": -6.775590655303929,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 933.2742179930955,
+    "deltaX": -589.61,
+    "deltaY": 723.4368071024751,
+    "bearing": -0.683828072966429,
+    "closingSpeed": 0.43494167577606097
+   }
+  }
+ },
+ {
+  "id": 15,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 768.0480088399215,
+   "verticalVelocity": -5.201611676660509,
+   "horizontalVelocity": -9.869903229778128,
+   "orientation": -0.5,
+   "padOffset": 553.1533162356676,
+   "fuel": 89.73999999999961,
+   "terrainSlope": 12.938969891910613,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 922.7056274689022,
+    "deltaX": -553.1533162356676,
+    "deltaY": 738.5168134174496,
+    "bearing": -0.642864464684773,
+    "closingSpeed": 1.7536384023507172
+   }
+  }
+ },
+ {
+  "id": 16,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 751.1692935859185,
+   "verticalVelocity": 0.7398678324149601,
+   "horizontalVelocity": -1.2785975779908179,
+   "orientation": -0.5,
+   "padOffset": 589.0219449335636,
+   "fuel": 98.37999999999994,
+   "terrainSlope": -6.775590655303929,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 931.0116851027329,
+    "deltaX": -589.0219449335636,
+    "deltaY": 720.9964675256824,
+    "bearing": -0.6849944220995909,
+    "closingSpeed": 1.3818990098288602
+   }
+  }
+ },
+ {
+  "id": 17,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 489.4632046249857,
+   "verticalVelocity": 12.020535943360139,
+   "horizontalVelocity": -10.276984004540425,
+   "orientation": -0.5,
+   "padOffset": 225.58675011105538,
+   "fuel": 75.35,
+   "terrainSlope": 2.0254871915160626,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 538.0328671262449,
+    "deltaX": -225.58675011105538,
+    "deltaY": 488.4567373702811,
+    "bearing": -0.43265277296821103,
+    "closingSpeed": 15.22186411140154
+   }
+  }
+ },
+ {
+  "id": 18,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 819.9621905957364,
+   "verticalVelocity": -1.982471922122783,
+   "horizontalVelocity": -6.6642504038844725,
+   "orientation": -0.5,
+   "padOffset": 461.5278751060473,
+   "fuel": 94.05999999999977,
+   "terrainSlope": -17.59665887812014,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 919.0943183781528,
+    "deltaX": -461.5278751060473,
+    "deltaY": 794.8121706259271,
+    "bearing": -0.5260890330216768,
+    "closingSpeed": 1.6320898589592585
+   }
+  }
+ },
+ {
+  "id": 19,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 812.2215020190145,
+   "verticalVelocity": 1.2798678324149606,
+   "horizontalVelocity": -2.3685975779908177,
+   "orientation": -0.5,
+   "padOffset": 475.69554493356645,
+   "fuel": 98.37999999999994,
+   "terrainSlope": -15.822659985445943,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 923.2242946391849,
+    "deltaX": -475.69554493356645,
+    "deltaY": 791.2375412873038,
+    "bearing": -0.5413046677837646,
+    "closingSpeed": 2.3173250583917073
+   }
+  }
+ },
+ {
+  "id": 20,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 649.9952345613789,
+   "verticalVelocity": 20.383124601073366,
+   "horizontalVelocity": -10.478384370112117,
+   "orientation": 0.2,
+   "padOffset": 135.99047203787472,
+   "fuel": 81.12399999999957,
+   "terrainSlope": 22.879540449688346,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 641.3935470322184,
+    "deltaX": -135.99047203787472,
+    "deltaY": 626.8111946108545,
+    "bearing": -0.2136450196571679,
+    "closingSpeed": 22.141368873287355
+   }
+  }
+ },
+ {
+  "id": 21,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 607.1993304250999,
+   "verticalVelocity": 13.800991708044414,
+   "horizontalVelocity": 3.685652825893655,
+   "orientation": 0,
+   "padOffset": -13.670331642868064,
+   "fuel": 78.39999999999918,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 607.3531961189598,
+    "deltaX": 13.670331642868064,
+    "deltaY": 607.1993304250999,
+    "bearing": 0.022509943559076814,
+    "closingSpeed": 13.8804522222785
+   }
+  }
+ },
+ {
+  "id": 22,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 617.0134987682095,
+   "verticalVelocity": 12.242801375200973,
+   "horizontalVelocity": 5.67239225786947,
+   "orientation": -0.5,
+   "padOffset": -11.457119879181846,
+   "fuel": 79.85799999999924,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 617.1198613382276,
+    "deltaX": 11.457119879181846,
+    "deltaY": 617.0134987682095,
+    "bearing": 0.018566536042764988,
+    "closingSpeed": 12.346001914142565
+   }
+  }
+ },
+ {
+  "id": 23,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 804.7216880481606,
+   "verticalVelocity": 5.192593809168368,
+   "horizontalVelocity": 10.646088667970844,
+   "orientation": -0.5,
+   "padOffset": -51.86157270319836,
+   "fuel": 85.41999999999945,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 806.3911073036024,
+    "deltaX": 51.86157270319836,
+    "deltaY": 804.7216880481606,
+    "bearing": 0.0643575932904984,
+    "closingSpeed": 5.866527686223568
+   }
+  }
+ },
+ {
+  "id": 24,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 808.7331463898618,
+   "verticalVelocity": 5.219279742094792,
+   "horizontalVelocity": 12.253164547580015,
+   "orientation": 0,
+   "padOffset": -72.46027145734001,
+   "fuel": 86.7699999999995,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 811.9727784903365,
+    "deltaX": 72.46027145734001,
+    "deltaY": 808.7331463898618,
+    "bearing": 0.08935865272502971,
+    "closingSpeed": 6.291925409791422
+   }
+  }
+ },
+ {
+  "id": 25,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 780.3774719053766,
+   "verticalVelocity": 0.426228275546669,
+   "horizontalVelocity": 3.021304902009607,
+   "orientation": -0.5,
+   "padOffset": -8.336125949368807,
+   "fuel": 77.21199999999914,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 780.4219945986086,
+    "deltaX": 8.336125949368807,
+    "deltaY": 780.3774719053766,
+    "bearing": 0.010681765166349354,
+    "closingSpeed": 0.4584762151716696
+   }
+  }
+ },
+ {
+  "id": 26,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 740.6848438285472,
+   "verticalVelocity": -1.6824719221227828,
+   "horizontalVelocity": -5.094250403884473,
+   "orientation": -0.5,
+   "padOffset": 389.8138751060461,
+   "fuel": 94.05999999999977,
+   "terrainSlope": 25.088251751728414,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 834.5301373602364,
+    "deltaX": -389.8138751060461,
+    "deltaY": 737.8927380976877,
+    "bearing": -0.4860147115736572,
+    "closingSpeed": 0.8919098831655359
+   }
+  }
+ },
+ {
+  "id": 27,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 742.5077540861646,
+   "verticalVelocity": 1.5798678324149622,
+   "horizontalVelocity": -0.7985975779908183,
+   "orientation": -0.5,
+   "padOffset": 399.5227449335648,
+   "fuel": 98.37999999999994,
+   "terrainSlope": 25.088251751728414,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 836.7159090946369,
+    "deltaX": -399.5227449335648,
+    "deltaY": 735.1701087590643,
+    "bearing": -0.49779479175588753,
+    "closingSpeed": 1.7694530324392193
+   }
+  }
+ },
+ {
+  "id": 28,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 810.4355114882155,
+   "verticalVelocity": 0.1866678324149622,
+   "horizontalVelocity": -1.7685975779908176,
+   "orientation": -0.5,
+   "padOffset": 166.5963449335668,
+   "fuel": 98.37999999999994,
+   "terrainSlope": 11.655854863875923,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 832.530605663297,
+    "deltaX": -166.5963449335668,
+    "deltaY": 815.6916495961402,
+    "bearing": -0.2014685297220738,
+    "closingSpeed": 0.5368034295203662
+   }
+  }
+ },
+ {
+  "id": 29,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 823.8579383252329,
+   "verticalVelocity": -5.1716116766605085,
+   "horizontalVelocity": -10.359903229778126,
+   "orientation": -0.5,
+   "padOffset": 127.61331623567139,
+   "fuel": 89.73999999999961,
+   "terrainSlope": -12.21398584817577,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 841.4833795834611,
+    "deltaX": -127.61331623567139,
+    "deltaY": 831.7506354879074,
+    "bearing": -0.15224020607508792,
+    "closingSpeed": -3.5406875094802994
+   }
+  }
+ },
+ {
+  "id": 30,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 815.851616651993,
+   "verticalVelocity": -4.153051466548132,
+   "horizontalVelocity": -9.661859645570408,
+   "orientation": -0.5,
+   "padOffset": 132.6781354549471,
+   "fuel": 90.44199999999964,
+   "terrainSlope": 0.7134828777408568,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 835.0640819668737,
+    "deltaX": -132.6781354549471,
+    "deltaY": 824.4565078664709,
+    "bearing": -0.1595599654493674,
+    "closingSpeed": -2.5651837177009558
+   }
+  }
+ },
+ {
+  "id": 31,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 769.5223981094096,
+   "verticalVelocity": -3.0520417993916493,
+   "horizontalVelocity": -7.872076816831299,
+   "orientation": -0.5,
+   "padOffset": 292.7398568012145,
+   "fuel": 91.8999999999997,
+   "terrainSlope": -3.9533972268977466,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 825.0543823015634,
+    "deltaX": -292.7398568012145,
+    "deltaY": 771.374169903957,
+    "bearing": -0.36271383398416157,
+    "closingSpeed": -0.060354287546050225
+   }
+  }
+ },
+ {
+  "id": 32,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 760.379680140315,
+   "verticalVelocity": -0.09110526723940625,
+   "horizontalVelocity": -4.059684933850681,
+   "orientation": -0.5,
+   "padOffset": 309.7268063248425,
+   "fuel": 95.73399999999984,
+   "terrainSlope": -3.468010827691541,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 823.77495116496,
+    "deltaX": -309.7268063248425,
+    "deltaY": 763.3311703386977,
+    "bearing": -0.3854592556336388,
+    "closingSpeed": 1.4419590657629862
+   }
+  }
+ },
+ {
+  "id": 33,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 671.1700674675327,
+   "verticalVelocity": 21.294593809168603,
+   "horizontalVelocity": 10.176088667970845,
+   "orientation": -0.5,
+   "padOffset": -46.044584741996914,
+   "fuel": 85.41999999999945,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 672.7476222540183,
+    "deltaX": 46.044584741996914,
+    "deltaY": 671.1700674675327,
+    "bearing": 0.0684961308688927,
+    "closingSpeed": 21.941136991539455
+   }
+  }
+ },
+ {
+  "id": 34,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 700.715393713538,
+   "verticalVelocity": 21.64527974209494,
+   "horizontalVelocity": 11.783164547580016,
+   "orientation": 0,
+   "padOffset": -60.97605889106376,
+   "fuel": 86.7699999999995,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 703.3634499638185,
+    "deltaX": 60.97605889106376,
+    "deltaY": 700.715393713538,
+    "bearing": 0.08680106447894823,
+    "closingSpeed": 22.585295913108972
+   }
+  }
+ },
+ {
+  "id": 35,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 38.32764620803607,
+   "verticalVelocity": 2.861573995944166,
+   "horizontalVelocity": 2.3450499634331656,
+   "orientation": 0,
+   "padOffset": -5.992736775573121,
+   "fuel": 43.17423375229666,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 38.79331589216999,
+    "deltaX": 5.992736775573121,
+    "deltaY": 38.32764620803607,
+    "bearing": 0.15509968748187988,
+    "closingSpeed": 3.189484065115972
+   }
+  }
+ },
+ {
+  "id": 36,
+  "scenario": "random #9 (seed 7, pad 655)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 855.4246673404805,
+   "verticalVelocity": -1.7524719221227831,
+   "horizontalVelocity": -5.084250403884473,
+   "orientation": -0.5,
+   "padOffset": 292.2418751060462,
+   "fuel": 94.05999999999977,
+   "terrainSlope": -6.6295163563764605,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 655,
+    "targetY": 1009.402292844195,
+    "range": 881.2613689687296,
+    "deltaX": -292.2418751060462,
+    "deltaY": 831.3941826060257,
+    "bearing": -0.33801779770845514,
+    "closingSpeed": 0.03272117821337604
+   }
+  }
+ },
+ {
+  "id": 37,
+  "scenario": "random #9 (seed 7, pad 655)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 851.417544800815,
+   "verticalVelocity": 1.5098678324149615,
+   "horizontalVelocity": -0.7885975779908183,
+   "orientation": -0.5,
+   "padOffset": 301.922344933565,
+   "fuel": 98.37999999999994,
+   "terrainSlope": -6.1762708696093425,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 655,
+    "targetY": 1009.402292844195,
+    "range": 881.7733298737567,
+    "deltaX": -301.922344933565,
+    "deltaY": 828.4727532674024,
+    "bearing": -0.34947392554507006,
+    "closingSpeed": 1.6886194441374212
+   }
+  }
+ },
+ {
+  "id": 38,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 150,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 293.5283850451714,
+   "verticalVelocity": 21.66592873787773,
+   "horizontalVelocity": 11.516850949265212,
+   "orientation": 0,
+   "padOffset": -68.33119578807896,
+   "fuel": 70.72000000000003,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 301.37694859603175,
+    "deltaX": 68.33119578807896,
+    "deltaY": 293.5283850451714,
+    "bearing": 0.2287189287438928,
+    "closingSpeed": 23.712912693892346
+   }
+  }
+ },
+ {
+  "id": 39,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 300,
+  "expected": "left_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 327.1602094249349,
+   "verticalVelocity": 15.527600787672897,
+   "horizontalVelocity": 12.209207842430095,
+   "orientation": 0,
+   "padOffset": -66.15530670736439,
+   "fuel": 66.77800000000013,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 333.78185576288104,
+    "deltaX": 66.15530670736439,
+    "deltaY": 327.1602094249349,
+    "bearing": 0.19952036091275233,
+    "closingSpeed": 17.639416023902783
+   }
+  }
+ },
+ {
+  "id": 40,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 790.8401494391269,
+   "verticalVelocity": 0.1,
+   "horizontalVelocity": 0.8,
+   "orientation": 0.02,
+   "padOffset": -240,
+   "fuel": 100,
+   "terrainSlope": 4.97441832041741,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 799.7599329992265,
+    "deltaX": 240,
+    "deltaY": 762.8996988011775,
+    "bearing": 0.304787055718597,
+    "closingSpeed": 0.3354631293843239
+   }
+  }
+ },
+ {
+  "id": 41,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 796.9452392957842,
+   "verticalVelocity": -4.372041799391641,
+   "horizontalVelocity": 8.5820768168313,
+   "orientation": 0.5,
+   "padOffset": -212.1558568012149,
+   "fuel": 91.8999999999997,
+   "terrainSlope": -14.651749448630826,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 802.5169547762426,
+    "deltaX": 212.1558568012149,
+    "deltaY": 773.9659909377649,
+    "bearing": 0.2675434507599958,
+    "closingSpeed": -1.9477143681214912
+   }
+  }
+ },
+ {
+  "id": 42,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 791.8048610829956,
+   "verticalVelocity": -3.0520783668937685,
+   "horizontalVelocity": 7.400772289710544,
+   "orientation": 0.5,
+   "padOffset": -218.9239364986363,
+   "fuel": 93.08799999999974,
+   "terrainSlope": -14.651749448630826,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 797.6859016954679,
+    "deltaX": 218.9239364986363,
+    "deltaY": 767.0561307959495,
+    "bearing": 0.27801644256595365,
+    "closingSpeed": -0.9037507353079897
+   }
+  }
+ },
+ {
+  "id": 43,
+  "scenario": "pad 400m right",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 777.5033973113246,
+   "verticalVelocity": -0.35333216758503666,
+   "horizontalVelocity": 2.1385975779908177,
+   "orientation": 0.5,
+   "padOffset": -398.01434493356373,
+   "fuel": 98.37999999999994,
+   "terrainSlope": -7.3244822824238565,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 860.1685111592318,
+    "deltaX": 398.01434493356373,
+    "deltaY": 762.5447192243847,
+    "bearing": 0.481057271395172,
+    "closingSpeed": 0.6763336811439642
+   }
+  }
+ },
+ {
+  "id": 44,
+  "scenario": "pad 400m right",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 583.012434390291,
+   "verticalVelocity": 21.34656857228862,
+   "horizontalVelocity": 10.190894779687497,
+   "orientation": -0.2,
+   "padOffset": -123.03915140108506,
+   "fuel": 86.19999999999976,
+   "terrainSlope": 2.2460040282462534,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 586.5768300702432,
+    "deltaX": 123.03915140108506,
+    "deltaY": 573.527457753991,
+    "bearing": 0.21132739238585008,
+    "closingSpeed": 23.009299990813112
+   }
+  }
+ },
+ {
+  "id": 45,
+  "scenario": "pad 400m right",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 784.8384421243918,
+   "verticalVelocity": -4.693051466548128,
+   "horizontalVelocity": 10.031859645570409,
+   "orientation": 0.5,
+   "padOffset": -361.78733545494174,
+   "fuel": 90.44199999999964,
+   "terrainSlope": -6.723777734429085,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 854.9958503638924,
+    "deltaX": 361.78733545494174,
+    "deltaY": 774.6791774947155,
+    "bearing": 0.4369137333672537,
+    "closingSpeed": -0.007262584039858214
+   }
+  }
+ },
+ {
+  "id": 46,
+  "scenario": "pad 300m left",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 706.4574830246631,
+   "verticalVelocity": 9.56945405463055,
+   "horizontalVelocity": -7.480435842077188,
+   "orientation": 0.5,
+   "padOffset": 21.840552563019173,
+   "fuel": 81.09999999999928,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 706.7950092196465,
+    "deltaX": -21.840552563019173,
+    "deltaY": 706.4574830246631,
+    "bearing": -0.030905749977748666,
+    "closingSpeed": 9.79603589052221
+   }
+  }
+ },
+ {
+  "id": 47,
+  "scenario": "pad 300m left",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 726.5049792350733,
+   "verticalVelocity": 9.338574474855337,
+   "horizontalVelocity": -9.413479613729333,
+   "orientation": 0.5,
+   "padOffset": 38.91345507945516,
+   "fuel": 82.50399999999934,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 727.5463846653181,
+    "deltaX": -38.91345507945516,
+    "deltaY": 726.5049792350733,
+    "bearing": -0.05351140953219057,
+    "closingSpeed": 9.828695491792832
+   }
+  }
+ },
+ {
+  "id": 48,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 360.04609047606937,
+   "verticalVelocity": 20.259697756867492,
+   "horizontalVelocity": -11.50129234834252,
+   "orientation": 0.5,
+   "padOffset": 57.980993445330796,
+   "fuel": 73.09999999999974,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 364.68477191680137,
+    "deltaX": -57.980993445330796,
+    "deltaY": 360.04609047606937,
+    "bearing": -0.15966689371680642,
+    "closingSpeed": 21.830583399477092
+   }
+  }
+ },
+ {
+  "id": 49,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 387.5769399703023,
+   "verticalVelocity": 19.22843156741023,
+   "horizontalVelocity": -11.040558127585136,
+   "orientation": 0,
+   "padOffset": 76.0871083877048,
+   "fuel": 74.32399999999996,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 394.9748504139797,
+    "deltaX": -76.0871083877048,
+    "deltaY": 387.5769399703023,
+    "bearing": -0.19384964720514727,
+    "closingSpeed": 20.995110958452152
+   }
+  }
+ },
+ {
+  "id": 50,
+  "scenario": "nearly overhead, tilted",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 772.1378109448349,
+   "verticalVelocity": -1.4233643914399932,
+   "horizontalVelocity": -5.37120700712118,
+   "orientation": 0,
+   "padOffset": 23.394596083237275,
+   "fuel": 93.51999999999975,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 772.4921399060182,
+    "deltaX": -23.394596083237275,
+    "deltaY": 772.1378109448349,
+    "bearing": -0.030289206105236114,
+    "closingSpeed": -1.2600467974867304
+   }
+  }
+ },
+ {
+  "id": 51,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "drifting_away",
+  "telemetry": {
+   "altitude": 753.6976425888537,
+   "verticalVelocity": 0.1,
+   "horizontalVelocity": -1.2,
+   "orientation": 0.02,
+   "padOffset": -600,
+   "fuel": 100,
+   "terrainSlope": 0.4585484351675187,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 970.5750617190446,
+    "deltaX": 600,
+    "deltaY": 762.8996988011775,
+    "bearing": 0.6664381629123932,
+    "closingSpeed": -0.6632253964775978
+   }
+  }
+ },
+ {
+  "id": 52,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 765.7950868380062,
+   "verticalVelocity": -4.372041799391641,
+   "horizontalVelocity": 6.5820768168313,
+   "orientation": 0.5,
+   "padOffset": -584.9558568012144,
+   "fuel": 91.8999999999997,
+   "terrainSlope": 7.817545829874429,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 970.1529310033131,
+    "deltaX": 584.9558568012144,
+    "deltaY": 773.9659909377649,
+    "bearing": 0.6471965045637789,
+    "closingSpeed": 0.4807620585665067
+   }
+  }
+ },
+ {
+  "id": 53,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 328.8176492794868,
+   "verticalVelocity": 15.504340012104926,
+   "horizontalVelocity": 10.311940298469263,
+   "orientation": 0.5,
+   "padOffset": -107.64393323761419,
+   "fuel": 65.1000000000002,
+   "terrainSlope": 3.0334578105595127,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 336.35853812072537,
+    "deltaX": 107.64393323761419,
+    "deltaY": 318.6688717208625,
+    "bearing": 0.32575836050733,
+    "closingSpeed": 17.98904343347174
+   }
+  }
+ },
+ {
+  "id": 54,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 758.0987902662991,
+   "verticalVelocity": -3.0520783668937685,
+   "horizontalVelocity": 5.400772289710545,
+   "orientation": 0.5,
+   "padOffset": -590.6839364986351,
+   "fuel": 93.08799999999974,
+   "terrainSlope": 7.817545829874429,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 968.1335758195645,
+    "deltaX": 590.6839364986351,
+    "deltaY": 767.0561307959495,
+    "bearing": 0.6562202242531299,
+    "closingSpeed": 0.8769802374684463
+   }
+  }
+ },
+ {
+  "id": 55,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 207.20497675888544,
+   "verticalVelocity": 21.545273626688413,
+   "horizontalVelocity": -9.909440780811359,
+   "orientation": 0,
+   "padOffset": 53.300107730830405,
+   "fuel": 66.72000000000025,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 213.9504706182447,
+    "deltaX": -53.300107730830405,
+    "deltaY": 207.20497675888544,
+    "bearing": -0.2517752007271228,
+    "closingSpeed": 23.334663241566133
+   }
+  }
+ },
+ {
+  "id": 56,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 249.0771502876496,
+   "verticalVelocity": 20.170712010981543,
+   "horizontalVelocity": -10.493508729082134,
+   "orientation": 0.2,
+   "padOffset": 36.16856109503226,
+   "fuel": 66.03199999999993,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 251.68947456558743,
+    "deltaX": -36.16856109503226,
+    "deltaY": 249.0771502876496,
+    "bearing": -0.14420235901151587,
+    "closingSpeed": 21.469306922205416
+   }
+  }
+ },
+ {
+  "id": 57,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 285.3311700584811,
+   "verticalVelocity": 17.665794485542552,
+   "horizontalVelocity": -9.071391916425737,
+   "orientation": 0.5,
+   "padOffset": 35.66421940648456,
+   "fuel": 71.26000000000005,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 287.5514095823836,
+    "deltaX": -35.66421940648456,
+    "deltaY": 285.3311700584811,
+    "bearing": -0.1243474827042068,
+    "closingSpeed": 18.654493573836277
+   }
+  }
+ },
+ {
+  "id": 58,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 847.482364478774,
+   "verticalVelocity": -3.976320257905206,
+   "horizontalVelocity": -13.913164547580015,
+   "orientation": 0,
+   "padOffset": 388.75727899712456,
+   "fuel": 86.7699999999995,
+   "terrainSlope": 13.639751240325664,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 904.9887319143199,
+    "deltaX": -388.75727899712456,
+    "deltaY": 817.2345947882045,
+    "bearing": -0.44401810351955906,
+    "closingSpeed": 2.38594961560649
+   }
+  }
+ },
+ {
+  "id": 59,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "drifting_away",
+  "telemetry": {
+   "altitude": 755.0015651595666,
+   "verticalVelocity": 1.47,
+   "horizontalVelocity": -0.61,
+   "orientation": -0.15,
+   "padOffset": -281.96,
+   "fuel": 100,
+   "terrainSlope": 9.621360259170338,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 804.4891606967257,
+    "deltaX": 281.96,
+    "deltaY": 753.4595994998817,
+    "bearing": 0.3580870652743293,
+    "closingSpeed": 1.1629616121298154
+   }
+  }
+ },
+ {
+  "id": 60,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 759.2190043766602,
+   "verticalVelocity": -3.0020417993916495,
+   "horizontalVelocity": 7.1720768168313,
+   "orientation": 0.5,
+   "padOffset": -263.13985680121453,
+   "fuel": 91.8999999999997,
+   "terrainSlope": 3.56682119138272,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 800.2578178363299,
+    "deltaX": 263.13985680121453,
+    "deltaY": 755.7578916364691,
+    "bearing": 0.3350526067705086,
+    "closingSpeed": -0.47679323570509974
+   }
+  }
+ },
+ {
+  "id": 61,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 749.9859104260267,
+   "verticalVelocity": -0.04110526723940562,
+   "horizontalVelocity": 3.359684933850682,
+   "orientation": 0.5,
+   "padOffset": -278.3908063248427,
+   "fuel": 95.73399999999984,
+   "terrainSlope": 9.621360259170338,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 797.9752186255479,
+    "deltaX": 278.3908063248427,
+    "deltaY": 747.83889207121,
+    "bearing": 0.3563666699811683,
+    "closingSpeed": 1.133575653864984
+   }
+  }
+ },
+ {
+  "id": 62,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 816.9889522329445,
+   "verticalVelocity": 0.36666783241496104,
+   "horizontalVelocity": 0.7085975779908185,
+   "orientation": 0.5,
+   "padOffset": -214.95234493356452,
+   "fuel": 98.37999999999994,
+   "terrainSlope": 6.15315694106549,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 812.6648509647914,
+    "deltaX": 214.95234493356452,
+    "deltaY": 783.7216657724784,
+    "bearing": 0.2676886001733316,
+    "closingSpeed": 0.5410351326094909
+   }
+  }
+ },
+ {
+  "id": 63,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 833.5522485392462,
+   "verticalVelocity": -4.9916116766605105,
+   "horizontalVelocity": 9.299903229778128,
+   "orientation": 0.5,
+   "padOffset": -182.7533162356683,
+   "fuel": 89.73999999999961,
+   "terrainSlope": -0.9562060421811562,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 819.2719315674042,
+    "deltaX": 182.7533162356683,
+    "deltaY": 798.6286516642458,
+    "bearing": 0.22496060227145714,
+    "closingSpeed": -2.7913271026812745
+   }
+  }
+ },
+ {
+  "id": 64,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 826.3686245415985,
+   "verticalVelocity": -3.9730514665481333,
+   "horizontalVelocity": 8.601859645570409,
+   "orientation": 0.5,
+   "padOffset": -187.64853545494339,
+   "fuel": 90.44199999999964,
+   "terrainSlope": -0.9562060421811562,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 813.3067585471484,
+    "deltaX": 187.64853545494339,
+    "deltaY": 791.3633240428093,
+    "bearing": 0.232820615014343,
+    "closingSpeed": -1.8812100531582234
+   }
+  }
+ },
+ {
+  "id": 65,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 388.08002854515087,
+   "verticalVelocity": 17.92171370952195,
+   "horizontalVelocity": -5.673441918116307,
+   "orientation": 0.5,
+   "padOffset": 26.499835486089694,
+   "fuel": 75.25999999999982,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 388.98373980977016,
+    "deltaX": -26.499835486089694,
+    "deltaY": 388.08002854515087,
+    "bearing": -0.06817862518456086,
+    "closingSpeed": 18.26658473928529
+   }
+  }
+ },
+ {
+  "id": 66,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 851.3990890356183,
+   "verticalVelocity": -4.90207402324659,
+   "horizontalVelocity": -13.04468624596166,
+   "orientation": 0,
+   "padOffset": 88.50140760445356,
+   "fuel": 87.03999999999951,
+   "terrainSlope": 6.0931925268486165,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 855.4023912434292,
+    "deltaX": -88.50140760445356,
+    "deltaY": 850.8118192626423,
+    "bearing": -0.10364720195727078,
+    "closingSpeed": -3.5261409767255887
+   }
+  }
+ },
+ {
+  "id": 67,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 893.8913851480078,
+   "verticalVelocity": -9.374115822638258,
+   "horizontalVelocity": -5.262609429130361,
+   "orientation": 0.5,
+   "padOffset": 27.73955882908467,
+   "fuel": 78.9399999999992,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 894.3216935565504,
+    "deltaX": -27.73955882908467,
+    "deltaY": 893.8913851480078,
+    "bearing": -0.031022403801074103,
+    "closingSpeed": -9.206372799299078
+   }
+  }
+ },
+ {
+  "id": 68,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 863.1346110793577,
+   "verticalVelocity": -5.997425525144598,
+   "horizontalVelocity": -9.343479613729333,
+   "orientation": 0.5,
+   "padOffset": 39.156067645765916,
+   "fuel": 82.50399999999934,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 864.0223113303231,
+    "deltaX": -39.156067645765916,
+    "deltaY": 863.1346110793577,
+    "bearing": -0.04533387894005502,
+    "closingSpeed": -5.5678326418609005
+   }
+  }
+ },
+ {
+  "id": 69,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 686.7812342150371,
+   "verticalVelocity": 16.160593809168464,
+   "horizontalVelocity": -11.366088667970843,
+   "orientation": 0.5,
+   "padOffset": 58.11758072903115,
+   "fuel": 85.41999999999945,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 689.2358934789489,
+    "deltaX": -58.11758072903115,
+    "deltaY": 686.7812342150371,
+    "bearing": -0.08442200042462797,
+    "closingSpeed": 17.061447682718352
+   }
+  }
+ },
+ {
+  "id": 70,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 718.9226728234822,
+   "verticalVelocity": 15.344879742094786,
+   "horizontalVelocity": -12.973164547580014,
+   "orientation": 0,
+   "padOffset": 84.86726391758089,
+   "fuel": 86.7699999999995,
+   "terrainSlope": -2.4787229981925987,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 724.252758306387,
+    "deltaX": -84.86726391758089,
+    "deltaY": 719.2632379244427,
+    "bearing": -0.1174489026131298,
+    "closingSpeed": 16.759349176314927
+   }
+  }
+ },
+ {
+  "id": 71,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 611.5228594399579,
+   "verticalVelocity": 10.551828275546566,
+   "horizontalVelocity": -3.741304902009606,
+   "orientation": 0.5,
+   "padOffset": 15.098318409610783,
+   "fuel": 77.21199999999914,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 611.7092175506434,
+    "deltaX": -15.098318409610783,
+    "deltaY": 611.5228594399579,
+    "bearing": -0.024684689072624368,
+    "closingSpeed": 10.640957215134199
+   }
+  }
+ },
+ {
+  "id": 72,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 830.8592361231817,
+   "verticalVelocity": -0.4229020448539097,
+   "horizontalVelocity": 2.386423990937646,
+   "orientation": 0.5,
+   "padOffset": -309.26137115016354,
+   "fuel": 96.21999999999986,
+   "terrainSlope": -15.822659985445943,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 875.2638273526184,
+    "deltaX": 309.26137115016354,
+    "deltaY": 818.8065533361803,
+    "bearing": 0.36113369746372265,
+    "closingSpeed": 0.4475836628851601
+   }
+  }
+ },
+ {
+  "id": 73,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "drifting_away",
+  "telemetry": {
+   "altitude": 833.9229529164666,
+   "verticalVelocity": 1.37,
+   "horizontalVelocity": -1.1,
+   "orientation": -0.11,
+   "padOffset": -310.3499999999999,
+   "fuel": 100,
+   "terrainSlope": -15.822659985445943,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 878.2259608862587,
+    "deltaX": 310.3499999999999,
+    "deltaY": 821.5617541454765,
+    "bearing": 0.3611848231417738,
+    "closingSpeed": 0.8928847905930452
+   }
+  }
+ },
+ {
+  "id": 74,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "not_moving_toward_pad",
+  "telemetry": {
+   "altitude": 46.14016219764528,
+   "verticalVelocity": 3.012530024755808,
+   "horizontalVelocity": -0.017274951987181396,
+   "orientation": 0.0013930278303827463,
+   "padOffset": -10.898363215600284,
+   "fuel": 46.6477962706598,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 47.40979738834752,
+    "deltaX": 10.898363215600284,
+    "deltaY": 46.14016219764528,
+    "bearing": 0.23195002244147916,
+    "closingSpeed": 2.927883326080994
+   }
+  }
+ },
+ {
+  "id": 75,
+  "scenario": "random #9 (seed 7, pad 655)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 704.2259555048748,
+   "verticalVelocity": 13.441454054630668,
+   "horizontalVelocity": -6.430435842077189,
+   "orientation": 0.5,
+   "padOffset": 32.647054569491274,
+   "fuel": 81.09999999999928,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 655,
+    "targetY": 1009.402292844195,
+    "range": 704.9822881312816,
+    "deltaX": -32.647054569491274,
+    "deltaY": 704.2259555048748,
+    "bearing": -0.04632561008265186,
+    "closingSpeed": 13.724820861084167
+   }
+  }
+ },
+ {
+  "id": 76,
+  "scenario": "random #9 (seed 7, pad 655)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "overshoot_risk",
+  "telemetry": {
+   "altitude": 724.017016983585,
+   "verticalVelocity": 13.793774474855365,
+   "horizontalVelocity": -8.363479613729334,
+   "orientation": 0.5,
+   "padOffset": 43.04445256624376,
+   "fuel": 82.50399999999934,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 655,
+    "targetY": 1009.402292844195,
+    "range": 725.2954334466311,
+    "deltaX": -43.04445256624376,
+    "deltaY": 724.017016983585,
+    "bearing": -0.059382368463090855,
+    "closingSpeed": 14.265812760714654
+   }
+  }
+ },
+ {
+  "id": 77,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 838.1358095830599,
+   "verticalVelocity": 0.5166678324149605,
+   "horizontalVelocity": 1.4285975779908175,
+   "orientation": 0.5,
+   "padOffset": -563.1003449335642,
+   "fuel": 98.37999999999994,
+   "terrainSlope": -15.822659985445943,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 977.3065043600975,
+    "deltaX": 563.1003449335642,
+    "deltaY": 798.7778195469966,
+    "bearing": 0.6140419987416522,
+    "closingSpeed": 1.2454092836937778
+   }
+  }
+ },
+ {
+  "id": 78,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 150,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 533.5263433948492,
+   "verticalVelocity": 21.116343583830826,
+   "horizontalVelocity": 10.171311024180469,
+   "orientation": -0.2,
+   "padOffset": -191.54358139640635,
+   "fuel": 80.0399999999999,
+   "terrainSlope": 1.1777468880032154,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 550.3874832460035,
+    "deltaX": 191.54358139640635,
+    "deltaY": 515.9820133877809,
+    "bearing": 0.35545384402779556,
+    "closingSpeed": 23.336109940386653
+   }
+  }
+ },
+ {
+  "id": 79,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 300,
+  "expected": "right_thrust",
+  "reason": "too_slow_toward_pad",
+  "telemetry": {
+   "altitude": 834.6737220765716,
+   "verticalVelocity": -0.5411052672394061,
+   "horizontalVelocity": 4.059684933850681,
+   "orientation": 0.5,
+   "padOffset": -557.6368063248422,
+   "fuel": 95.73399999999984,
+   "terrainSlope": -15.822659985445943,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 972.6002202350431,
+    "deltaX": 557.6368063248422,
+    "deltaY": 796.8640916951177,
+    "bearing": 0.6105844073934079,
+    "closingSpeed": 1.8842709941650164
+   }
+  }
+ },
+ {
+  "id": 80,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "overspeed",
+  "telemetry": {
+   "altitude": 510.82321809588734,
+   "verticalVelocity": 22.702336948411226,
+   "horizontalVelocity": 1.072272231719304,
+   "orientation": 0,
+   "padOffset": 4.028902074656116,
+   "fuel": 78.39999999999918,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 510.83910597933453,
+    "deltaX": -4.028902074656116,
+    "deltaY": 510.8232180958874,
+    "bearing": -0.00788691350441212,
+    "closingSpeed": 22.693174040075515
+   }
+  }
+ },
+ {
+  "id": 81,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 19.22129153605033,
+   "verticalVelocity": 2.534609857935638,
+   "horizontalVelocity": -0.6011764069174358,
+   "orientation": 0.04835048871780969,
+   "padOffset": -0.905379955071794,
+   "fuel": 40.78980499214758,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 19.242602765137722,
+    "deltaX": 0.905379955071794,
+    "deltaY": 19.22129153605033,
+    "bearing": 0.047068182568317164,
+    "closingSpeed": 2.5035169373511774
+   }
+  }
+ },
+ {
+  "id": 82,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 52.967395864842615,
+   "verticalVelocity": 13.619902893096434,
+   "horizontalVelocity": -0.091263234233721,
+   "orientation": 0,
+   "padOffset": -1.3602991686782389,
+   "fuel": 35.809999999998446,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 52.9848604653372,
+    "deltaX": 1.3602991686782389,
+    "deltaY": 52.967395864842615,
+    "bearing": 0.025676176831241068,
+    "closingSpeed": 13.61307053643299
+   }
+  }
+ },
+ {
+  "id": 83,
+  "scenario": "pad 400m right",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 57.45622665198755,
+   "verticalVelocity": 9.972018988274579,
+   "horizontalVelocity": 0.14424378838028873,
+   "orientation": -0.011719510633100491,
+   "padOffset": 2.007227990129195,
+   "fuel": 55.39999999999987,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 57.49127712348129,
+    "deltaX": -2.007227990129195,
+    "deltaY": 57.45622665198755,
+    "bearing": -0.034920706286318264,
+    "closingSpeed": 9.960903317016308
+   }
+  }
+ },
+ {
+  "id": 84,
+  "scenario": "pad 400m right",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "overspeed",
+  "telemetry": {
+   "altitude": 310.67249427857894,
+   "verticalVelocity": 23.802038024410493,
+   "horizontalVelocity": -0.14882386740528802,
+   "orientation": 0,
+   "padOffset": 2.079892866024693,
+   "fuel": 66.38599999999965,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 310.67945644282275,
+    "deltaX": -2.079892866024693,
+    "deltaY": 310.67249427857894,
+    "bearing": -0.006694708515379759,
+    "closingSpeed": 23.80250095814835
+   }
+  }
+ },
+ {
+  "id": 85,
+  "scenario": "pad 300m left",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "overspeed",
+  "telemetry": {
+   "altitude": 316.38139336848485,
+   "verticalVelocity": 22.90846751408106,
+   "horizontalVelocity": -0.14495134809124316,
+   "orientation": 0,
+   "padOffset": -6.546865736321934,
+   "fuel": 66.07999999999947,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 316.4491231157915,
+    "deltaX": 6.546865736321934,
+    "deltaY": 316.38139336848485,
+    "bearing": 0.020690001565014653,
+    "closingSpeed": 22.90056557488293
+   }
+  }
+ },
+ {
+  "id": 86,
+  "scenario": "pad 300m left",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 8.601824015466718,
+   "verticalVelocity": 2.514757022066027,
+   "horizontalVelocity": -0.0009922178822093395,
+   "orientation": 0.00007979205772447244,
+   "padOffset": -7.323777420989018,
+   "fuel": 33.85805523737157,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 11.297304638950324,
+    "deltaX": 7.323777420989018,
+    "deltaY": 8.601824015466718,
+    "bearing": 0.70531870687754,
+    "closingSpeed": 1.9141052891495618
+   }
+  }
+ },
+ {
+  "id": 87,
+  "scenario": "pad 300m left",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 22.35531647633445,
+   "verticalVelocity": 3.137829188857254,
+   "horizontalVelocity": -0.0018796538045243154,
+   "orientation": 0.00015167742858127737,
+   "padOffset": -2.919584496471998,
+   "fuel": 37.46199517868721,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 22.545157981019123,
+    "deltaX": 2.919584496471998,
+    "deltaY": 22.35531647633445,
+    "bearing": 0.1298641148475672,
+    "closingSpeed": 3.1111636838619594
+   }
+  }
+ },
+ {
+  "id": 88,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 39.26775055496341,
+   "verticalVelocity": 10.183167908417278,
+   "horizontalVelocity": -0.07764728032228622,
+   "orientation": 0,
+   "padOffset": -1.1304572747010297,
+   "fuel": 49.75999999999914,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 39.28401923552062,
+    "deltaX": 1.1304572747010297,
+    "deltaY": 39.26775055496341,
+    "bearing": 0.02878049075805718,
+    "closingSpeed": 10.176716337432548
+   }
+  }
+ },
+ {
+  "id": 89,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 71.52759429891648,
+   "verticalVelocity": 13.26344035797086,
+   "horizontalVelocity": -0.1975656675761668,
+   "orientation": 0.01605179844237469,
+   "padOffset": 4.724533822655985,
+   "fuel": 55.83999999999944,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 71.68345671095814,
+    "deltaX": -4.724533822655985,
+    "deltaY": 71.52759429891648,
+    "bearing": -0.0659560968272594,
+    "closingSpeed": 13.247622675906827
+   }
+  }
+ },
+ {
+  "id": 90,
+  "scenario": "nearly overhead, tilted",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "overspeed",
+  "telemetry": {
+   "altitude": 391.3796321635991,
+   "verticalVelocity": 23.073758158054137,
+   "horizontalVelocity": 0.15299188301185737,
+   "orientation": 0,
+   "padOffset": 2.9636650838695004,
+   "fuel": 79.03999999999996,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 391.39085296317734,
+    "deltaX": -2.9636650838695004,
+    "deltaY": 391.3796321635991,
+    "bearing": -0.007572209170363389,
+    "closingSpeed": 23.07193818011594
+   }
+  }
+ },
+ {
+  "id": 91,
+  "scenario": "nearly overhead, tilted",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 14.080717650257498,
+   "verticalVelocity": 2.5161741154343122,
+   "horizontalVelocity": 0.0008378774297910311,
+   "orientation": -0.0000673808509159535,
+   "padOffset": 3.8525994662347784,
+   "fuel": 45.38267927881949,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 14.598257847890805,
+    "deltaX": -3.8525994662347784,
+    "deltaY": 14.080717650257498,
+    "bearing": -0.26707178287402344,
+    "closingSpeed": 2.4267491122097606
+   }
+  }
+ },
+ {
+  "id": 92,
+  "scenario": "nearly overhead, tilted",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 59.598872114758024,
+   "verticalVelocity": 9.833356153514075,
+   "horizontalVelocity": 0.00557254377451232,
+   "orientation": 0,
+   "padOffset": 7.089027060794933,
+   "fuel": 60.016000000000986,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 60.01899584314922,
+    "deltaX": -7.089027060794933,
+    "deltaY": 59.598872114758024,
+    "bearing": -0.1183894217578651,
+    "closingSpeed": 9.76386598452945
+   }
+  }
+ },
+ {
+  "id": 93,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 94.82891867217711,
+   "verticalVelocity": 15.415803642272042,
+   "horizontalVelocity": 0.38203706869113657,
+   "orientation": 0,
+   "padOffset": 3.4277213617967845,
+   "fuel": 49.4399999999996,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 94.89084829565229,
+    "deltaX": -3.4277213617967845,
+    "deltaY": 94.82891867217711,
+    "bearing": -0.036130641765558996,
+    "closingSpeed": 15.391942420909267
+   }
+  }
+ },
+ {
+  "id": 94,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "far_from_pad",
+  "telemetry": {
+   "altitude": 645.57214178911,
+   "verticalVelocity": 17.895552460361053,
+   "horizontalVelocity": 10.607199494252677,
+   "orientation": -0.2,
+   "padOffset": -331.10092388139856,
+   "fuel": 83.76999999999967,
+   "terrainSlope": 2.2801052339778307,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 718.1800258656957,
+    "deltaX": 331.10092388139856,
+    "deltaY": 637.3026971207132,
+    "bearing": 0.4791530317089684,
+    "closingSpeed": 20.770471002467342
+   }
+  }
+ },
+ {
+  "id": 95,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "far_from_pad",
+  "telemetry": {
+   "altitude": 632.7735751276668,
+   "verticalVelocity": 20.987925976753534,
+   "horizontalVelocity": -12.554686245961662,
+   "orientation": 0,
+   "padOffset": 314.73442766904225,
+   "fuel": 87.03999999999951,
+   "terrainSlope": -1.472456524895714,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 703.0878266447314,
+    "deltaX": -314.73442766904225,
+    "deltaY": 628.7087815641296,
+    "bearing": -0.4641310697089218,
+    "closingSpeed": 24.387686301464267
+   }
+  }
+ },
+ {
+  "id": 96,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 14.025451704758211,
+   "verticalVelocity": 2.9328984338865767,
+   "horizontalVelocity": -0.16588292952815697,
+   "orientation": 0.013370691884553698,
+   "padOffset": 2.3751867804600124,
+   "fuel": 40.38516381254963,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 14.225147020842247,
+    "deltaX": -2.3751867804600124,
+    "deltaY": 14.025451704758211,
+    "bearing": -0.16775672030187957,
+    "closingSpeed": 2.919423484334404
+   }
+  }
+ },
+ {
+  "id": 97,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 15.891693097298003,
+   "verticalVelocity": 2.889340726344245,
+   "horizontalVelocity": 0.10469667523825184,
+   "orientation": -0.008436861165448317,
+   "padOffset": -3.2460019273184457,
+   "fuel": 41.575057156676515,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 16.219816213843607,
+    "deltaX": 3.2460019273184457,
+    "deltaY": 15.891693097298003,
+    "bearing": 0.20148620528671826,
+    "closingSpeed": 2.851842528691185
+   }
+  }
+ },
+ {
+  "id": 98,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 28.894631273458913,
+   "verticalVelocity": 4.99525193855459,
+   "horizontalVelocity": 0.005208026910901575,
+   "orientation": 0,
+   "padOffset": 5.624549066620716,
+   "fuel": 46.63341916314037,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 29.436971118509693,
+    "deltaX": -5.624549066620716,
+    "deltaY": 28.894631273458913,
+    "bearing": -0.19225304861808784,
+    "closingSpeed": 4.902225487082345
+   }
+  }
+ },
+ {
+  "id": 99,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 120.98151507783393,
+   "verticalVelocity": 18.62837259345318,
+   "horizontalVelocity": -0.4736915040163138,
+   "orientation": 0.03848632433902411,
+   "padOffset": -5.833285195360645,
+   "fuel": 58.0939999999992,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 121.12206325314384,
+    "deltaX": 5.833285195360645,
+    "deltaY": 120.98151507783393,
+    "bearing": 0.048179021816134794,
+    "closingSpeed": 18.583943351826886
+   }
+  }
+ },
+ {
+  "id": 100,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 156.8200198643185,
+   "verticalVelocity": 20.91262591979387,
+   "horizontalVelocity": -0.011925307095526751,
+   "orientation": 0.0009689069764721997,
+   "padOffset": 2.046952281787526,
+   "fuel": 63.07999999999957,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 156.83337860254483,
+    "deltaX": -2.046952281787526,
+    "deltaY": 156.8200198643185,
+    "bearing": -0.013052134822158416,
+    "closingSpeed": 20.911000272479573
+   }
+  }
+ },
+ {
+  "id": 101,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 1.0464083687573975,
+   "verticalVelocity": 2.512510203846394,
+   "horizontalVelocity": -0.00017988639629931948,
+   "orientation": 0.000014465903756443419,
+   "padOffset": 2.0027527703015267,
+   "fuel": 35.94660490545337,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 2.2596435854257986,
+    "deltaX": -2.0027527703015267,
+    "deltaY": 1.0464083687573975,
+    "bearing": -1.0893229137378853,
+    "closingSpeed": 1.1636666901060246
+   }
+  }
+ },
+ {
+  "id": 102,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 8.731855796816603,
+   "verticalVelocity": 2.5134132989300864,
+   "horizontalVelocity": -0.14392515031469855,
+   "orientation": 0.011574068200813565,
+   "padOffset": -2.3269111921204058,
+   "fuel": 34.55036100840312,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 9.036582393383846,
+    "deltaX": 2.3269111921204058,
+    "deltaY": 8.731855796816603,
+    "bearing": 0.2604330562969302,
+    "closingSpeed": 2.3915967895990087
+   }
+  }
+ },
+ {
+  "id": 103,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 46.33327664417379,
+   "verticalVelocity": 8.553776344620124,
+   "horizontalVelocity": -0.002525659793655668,
+   "orientation": 0,
+   "padOffset": -2.481151028503291,
+   "fuel": 42.07999999999927,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 46.39966201398221,
+    "deltaX": 2.481151028503291,
+    "deltaY": 46.33327664417379,
+    "bearing": 0.053498988651261216,
+    "closingSpeed": 8.541403147825763
+   }
+  }
+ },
+ {
+  "id": 104,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "overspeed",
+  "telemetry": {
+   "altitude": 239.65901175973863,
+   "verticalVelocity": 22.379991970472556,
+   "horizontalVelocity": -0.06487558058026921,
+   "orientation": 0,
+   "padOffset": -8.229607981467097,
+   "fuel": 53.547999999998886,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 239.80026765035768,
+    "deltaX": 8.229607981467097,
+    "deltaY": 239.65901175973863,
+    "bearing": 0.034325333929508046,
+    "closingSpeed": 22.364582453503335
+   }
+  }
+ },
+ {
+  "id": 105,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 198.0774609781273,
+   "verticalVelocity": 24.53102672603411,
+   "horizontalVelocity": -1.1131047207052491,
+   "orientation": 0,
+   "padOffset": 1.7883989294549565,
+   "fuel": 70.39999999999964,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 198.08553434885752,
+    "deltaX": -1.7883989294549565,
+    "deltaY": 198.0774609781273,
+    "bearing": -0.00902854028345614,
+    "closingSpeed": 24.540076489428603
+   }
+  }
+ },
+ {
+  "id": 106,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 6.53807781986643,
+   "verticalVelocity": 2.51255189688067,
+   "horizontalVelocity": -0.01260835605269184,
+   "orientation": 0.001013924957945335,
+   "padOffset": -2.2797502767105016,
+   "fuel": 41.369137240747165,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 6.924140589473252,
+    "deltaX": 2.2797502767105016,
+    "deltaY": 6.53807781986643,
+    "bearing": 0.33550565805369875,
+    "closingSpeed": 2.3683106535978564
+   }
+  }
+ },
+ {
+  "id": 107,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 11.700693020596873,
+   "verticalVelocity": 2.685247048785816,
+   "horizontalVelocity": -0.019521870793861286,
+   "orientation": 0.0015713805576497895,
+   "padOffset": 1.287591669289725,
+   "fuel": 43.214119058453875,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 11.771325731159964,
+    "deltaX": -1.287591669289725,
+    "deltaY": 11.700693020596873,
+    "bearing": -0.109603051748021,
+    "closingSpeed": 2.671269856824453
+   }
+  }
+ },
+ {
+  "id": 108,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 110.42265213033443,
+   "verticalVelocity": 15.485086016856586,
+   "horizontalVelocity": -0.005809047688193894,
+   "orientation": 0.0004719733250592732,
+   "padOffset": -11.904768507054087,
+   "fuel": 43.07999999999929,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 111.06253021025317,
+    "deltaX": 11.904768507054087,
+    "deltaY": 110.42265213033443,
+    "bearing": 0.10739611371444584,
+    "closingSpeed": 15.395247234533436
+   }
+  }
+ },
+ {
+  "id": 109,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "overspeed",
+  "telemetry": {
+   "altitude": 810.7910973639996,
+   "verticalVelocity": 22.139359484189672,
+   "horizontalVelocity": -0.4299999999999996,
+   "orientation": 0,
+   "padOffset": -2.057615079542302,
+   "fuel": 73.539999999999,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 810.7937082541615,
+    "deltaX": 2.057615079542302,
+    "deltaY": 810.7910973639996,
+    "bearing": 0.002537781518552069,
+    "closingSpeed": 22.138196946900006
+   }
+  }
+ },
+ {
+  "id": 110,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 13.070326796688846,
+   "verticalVelocity": 2.9447146824563455,
+   "horizontalVelocity": -0.0003278869145036586,
+   "orientation": 0.000026430456889637912,
+   "padOffset": -4.946402861449769,
+   "fuel": 27.158348123057447,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 13.974989940604644,
+    "deltaX": 4.946402861449769,
+    "deltaY": 13.070326796688846,
+    "bearing": 0.36178772143075905,
+    "closingSpeed": 2.753974172826843
+   }
+  }
+ },
+ {
+  "id": 111,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 35.9173367812798,
+   "verticalVelocity": 6.465841969609026,
+   "horizontalVelocity": -0.00475071561023468,
+   "orientation": 0,
+   "padOffset": -1.5995947781590303,
+   "fuel": 46.07999999999933,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 35.95293847398552,
+    "deltaX": 1.5995947781590303,
+    "deltaY": 35.9173367812798,
+    "bearing": 0.044506041631743966,
+    "closingSpeed": 6.459227930566279
+   }
+  }
+ },
+ {
+  "id": 112,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 196.33352730750948,
+   "verticalVelocity": 23.154714881418023,
+   "horizontalVelocity": -0.01974407739725608,
+   "orientation": 0,
+   "padOffset": 8.670985743535198,
+   "fuel": 63.73999999999953,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 196.52490920688186,
+    "deltaX": -8.670985743535198,
+    "deltaY": 196.33352730750948,
+    "bearing": -0.04413588875213754,
+    "closingSpeed": 23.133037259395486
+   }
+  }
+ },
+ {
+  "id": 113,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "overspeed",
+  "telemetry": {
+   "altitude": 260.5214556569947,
+   "verticalVelocity": 22.94149010144227,
+   "horizontalVelocity": 0.30630227813616495,
+   "orientation": 0,
+   "padOffset": 1.5638475686303082,
+   "fuel": 68.23999999999955,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 260.52614931491496,
+    "deltaX": -1.5638475686303082,
+    "deltaY": 260.5214556569947,
+    "bearing": -0.006002687117104812,
+    "closingSpeed": 22.939238160202635
+   }
+  }
+ },
+ {
+  "id": 114,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 6.3372888206126845,
+   "verticalVelocity": 2.5146197625134046,
+   "horizontalVelocity": 0.00257893075906443,
+   "orientation": -0.00020739198553745445,
+   "padOffset": 3.072242103843564,
+   "fuel": 37.35002021302496,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 7.042719726106644,
+    "deltaX": -3.072242103843564,
+    "deltaY": 6.3372888206126845,
+    "bearing": -0.4514041857537071,
+    "closingSpeed": 2.261618980855329
+   }
+  }
+ },
+ {
+  "id": 115,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 11.781950188682572,
+   "verticalVelocity": 2.5307752507372085,
+   "horizontalVelocity": -0.007166895726314285,
+   "orientation": 0.0005763973224383362,
+   "padOffset": -1.8018197074479758,
+   "fuel": 36.299705802473845,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 11.9189305101903,
+    "deltaX": 1.8018197074479758,
+    "deltaY": 11.781950188682572,
+    "bearing": 0.15175473730643815,
+    "closingSpeed": 2.500606448161906
+   }
+  }
+ },
+ {
+  "id": 116,
+  "scenario": "random #9 (seed 7, pad 655)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 36.44418320109412,
+   "verticalVelocity": 4.988621174942959,
+   "horizontalVelocity": -1.8722607669676496,
+   "orientation": 0,
+   "padOffset": 4.428316348610224,
+   "fuel": 43.91999999999925,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 655,
+    "targetY": 1009.402292844195,
+    "range": 36.712238761457726,
+    "deltaX": -4.428316348610224,
+    "deltaY": 36.44418320109412,
+    "bearing": -0.12091678157471637,
+    "closingSpeed": 5.178033086428827
+   }
+  }
+ },
+ {
+  "id": 117,
+  "scenario": "random #9 (seed 7, pad 655)",
+  "latencyMs": 300,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 105.01097605169537,
+   "verticalVelocity": 17.377052865528402,
+   "horizontalVelocity": 0.017937029066680956,
+   "orientation": -0.0014573471699410537,
+   "padOffset": 2.4814627821291424,
+   "fuel": 55.83999999999942,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 655,
+    "targetY": 1009.402292844195,
+    "range": 105.04029107380096,
+    "deltaX": -2.4814627821291424,
+    "deltaY": 105.01097605169537,
+    "bearing": -0.02362611173024789,
+    "closingSpeed": 17.37177947230689
+   }
+  }
+ },
+ {
+  "id": 118,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "overspeed",
+  "telemetry": {
+   "altitude": 441.77307872735616,
+   "verticalVelocity": 22.922599801721216,
+   "horizontalVelocity": 11.382063513386509,
+   "orientation": 0,
+   "padOffset": -139.05159549726204,
+   "fuel": 76.87999999999988,
+   "terrainSlope": 7.1629656134749835,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 441.8354519935282,
+    "deltaX": 139.05159549726204,
+    "deltaY": 419.3843349816385,
+    "bearing": 0.3201548349173586,
+    "closingSpeed": 25.339916285501353
+   }
+  }
+ },
+ {
+  "id": 119,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 150,
+  "expected": "thrust",
+  "reason": "stopping_distance",
+  "telemetry": {
+   "altitude": 4.6942172333565395,
+   "verticalVelocity": 2.5125146636889686,
+   "horizontalVelocity": 0.03195844637940785,
+   "orientation": -0.0025699987724581404,
+   "padOffset": -7.351856943804933,
+   "fuel": 37.271591311603814,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 8.722698891748719,
+    "deltaX": 7.351856943804933,
+    "deltaY": 4.6942172333565395,
+    "bearing": 1.002542525549187,
+    "closingSpeed": 1.3790735767179305
+   }
+  }
+ },
+ {
+  "id": 120,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 800.3569443442676,
+   "verticalVelocity": -5.711611676660506,
+   "horizontalVelocity": 10.729903229778127,
+   "orientation": 0.5,
+   "padOffset": -196.6633162356684,
+   "fuel": 89.73999999999961,
+   "terrainSlope": -17.59665887812014,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 806.4079875095318,
+    "deltaX": 196.6633162356684,
+    "deltaY": 782.059705116152,
+    "bearing": 0.246360224663134,
+    "closingSpeed": -2.9223953979042827
+   }
+  }
+ },
+ {
+  "id": 121,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 375.7144742982316,
+   "verticalVelocity": 19.650626775697475,
+   "horizontalVelocity": 0.36612115262064904,
+   "orientation": -0.029746531554523795,
+   "padOffset": 8.15397965797456,
+   "fuel": 71.39999999999958,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 375.8029451473993,
+    "deltaX": -8.15397965797456,
+    "deltaY": 375.7144742982316,
+    "bearing": -0.02169919019682202,
+    "closingSpeed": 19.63805675162144
+   }
+  }
+ },
+ {
+  "id": 122,
+  "scenario": "default start (pad 240m right)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 785.6123842027341,
+   "verticalVelocity": 11.77370376561409,
+   "horizontalVelocity": 0.8000000000000003,
+   "orientation": 0,
+   "padOffset": 0.7732486993918428,
+   "fuel": 68.2479999999988,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 785.6127647424369,
+    "deltaX": -0.7732486993918428,
+    "deltaY": 785.6123842027341,
+    "bearing": -0.0009842620422487892,
+    "closingSpeed": 11.772910653091982
+   }
+  }
+ },
+ {
+  "id": 123,
+  "scenario": "pad 400m right",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 807.3091637392706,
+   "verticalVelocity": 6.265495854022273,
+   "horizontalVelocity": 11.266859833014834,
+   "orientation": 0,
+   "padOffset": -266.6250897601117,
+   "fuel": 89.19999999999959,
+   "terrainSlope": 13.639751240325664,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 827.4719904946513,
+    "deltaX": 266.6250897601117,
+    "deltaY": 783.3396176394967,
+    "bearing": 0.32806988247162105,
+    "closingSpeed": 9.561699648799145
+   }
+  }
+ },
+ {
+  "id": 124,
+  "scenario": "pad 400m right",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 793.7962122741831,
+   "verticalVelocity": -6.334024566202487,
+   "horizontalVelocity": 12.662947001430272,
+   "orientation": 0.5,
+   "padOffset": -339.49380319376405,
+   "fuel": 87.79599999999954,
+   "terrainSlope": -3.330206328873147,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 855.7426048105078,
+    "deltaX": 339.49380319376405,
+    "deltaY": 785.5185314688042,
+    "bearing": 0.40794543470320116,
+    "closingSpeed": -0.7905433649921821
+   }
+  }
+ },
+ {
+  "id": 125,
+  "scenario": "pad 400m right",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 225.49146342611198,
+   "verticalVelocity": 20.744786494247677,
+   "horizontalVelocity": -0.06970644566192576,
+   "orientation": 0,
+   "padOffset": 1.6802659554364254,
+   "fuel": 61.48599999999975,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 225.4977236508843,
+    "deltaX": -1.6802659554364254,
+    "deltaY": 225.49146342611198,
+    "bearing": -0.007451434442348422,
+    "closingSpeed": 20.744729989647183
+   }
+  }
+ },
+ {
+  "id": 126,
+  "scenario": "pad 300m left",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 551.260441473267,
+   "verticalVelocity": 20.119851953506807,
+   "horizontalVelocity": -0.49999999999999994,
+   "orientation": 0,
+   "padOffset": -3.368971909536185,
+   "fuel": 74.07999999999902,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 551.2707359410877,
+    "deltaX": 3.368971909536185,
+    "deltaY": 551.260441473267,
+    "bearing": 0.006111321825829002,
+    "closingSpeed": 20.116420592108614
+   }
+  }
+ },
+ {
+  "id": 127,
+  "scenario": "pad 300m left",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 686.1660024478548,
+   "verticalVelocity": 4.415655175892226,
+   "horizontalVelocity": -1.520217546149743,
+   "orientation": 0.5,
+   "padOffset": 6.926250670762101,
+   "fuel": 74.56599999999904,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 686.2009588040689,
+    "deltaX": -6.926250670762101,
+    "deltaY": 686.1660024478548,
+    "bearing": -0.010093789867724856,
+    "closingSpeed": 4.430774730084571
+   }
+  }
+ },
+ {
+  "id": 128,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 777.0210420973168,
+   "verticalVelocity": -0.2580740232465899,
+   "horizontalVelocity": -12.014686245961663,
+   "orientation": 0,
+   "padOffset": 393.60041161738263,
+   "fuel": 87.03999999999951,
+   "terrainSlope": -29.603060695667576,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 902.2454134286431,
+    "deltaX": -393.60041161738263,
+    "deltaY": 811.8654457652758,
+    "bearing": -0.45142185628777914,
+    "closingSpeed": 5.00912944823534
+   }
+  }
+ },
+ {
+  "id": 129,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 64.0087603749771,
+   "verticalVelocity": 6.9191238159062465,
+   "horizontalVelocity": -0.09064648840443536,
+   "orientation": 0.0073648420231759324,
+   "padOffset": -0.8797124935747433,
+   "fuel": 50.75999999999915,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 64.01480530949532,
+    "deltaX": 0.8797124935747433,
+    "deltaY": 64.0087603749771,
+    "bearing": 0.013742761238742867,
+    "closingSpeed": 6.917224747430589
+   }
+  }
+ },
+ {
+  "id": 130,
+  "scenario": "pad 500m left, drifting away",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 131.51740440246294,
+   "verticalVelocity": 16.318241438445643,
+   "horizontalVelocity": -0.42177642489719375,
+   "orientation": 0.034268373190292044,
+   "padOffset": 5.915579576062328,
+   "fuel": 60.73999999999951,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 131.65037691735526,
+    "deltaX": -5.915579576062328,
+    "deltaY": 131.51740440246294,
+    "bearing": -0.04494914623478769,
+    "closingSpeed": 16.32071142303445
+   }
+  }
+ },
+ {
+  "id": 131,
+  "scenario": "nearly overhead, tilted",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 426.2758852164857,
+   "verticalVelocity": 20.481758158054067,
+   "horizontalVelocity": 0.15299188301185737,
+   "orientation": 0,
+   "padOffset": 2.7188780710532683,
+   "fuel": 79.03999999999996,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 426.28455591900547,
+    "deltaX": -2.7188780710532683,
+    "deltaY": 426.2758852164857,
+    "bearing": -0.006378125755679216,
+    "closingSpeed": 20.480365760652848
+   }
+  }
+ },
+ {
+  "id": 132,
+  "scenario": "nearly overhead, tilted",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 573.5160047971214,
+   "verticalVelocity": 21.8229433224825,
+   "horizontalVelocity": 0.5277277682806967,
+   "orientation": 0,
+   "padOffset": 3.364672392069906,
+   "fuel": 89.4159999999996,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 573.5258745503621,
+    "deltaX": -3.364672392069906,
+    "deltaY": 573.5160047971214,
+    "bearing": -0.005866678108670084,
+    "closingSpeed": 21.819471782302028
+   }
+  }
+ },
+ {
+  "id": 133,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 778.0503025315132,
+   "verticalVelocity": 12.701925976753405,
+   "horizontalVelocity": 11.414686245961661,
+   "orientation": 0,
+   "padOffset": -410.9229216496756,
+   "fuel": 87.03999999999951,
+   "terrainSlope": -5.259780185050108,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 865.588743682938,
+    "deltaX": 410.9229216496756,
+    "deltaY": 761.8308379512486,
+    "bearing": 0.4946598295174785,
+    "closingSpeed": 16.59826937124819
+   }
+  }
+ },
+ {
+  "id": 134,
+  "scenario": "pad 600m right, fast drift away",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 807.195060969502,
+   "verticalVelocity": -5.026320257905199,
+   "horizontalVelocity": 11.683164547580015,
+   "orientation": 0,
+   "padOffset": -536.5620789971221,
+   "fuel": 86.7699999999995,
+   "terrainSlope": 26.63235922457941,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1400,
+    "targetY": 1012.8996988011775,
+    "range": 961.4039553885792,
+    "deltaX": 536.5620789971221,
+    "deltaY": 797.7460127252855,
+    "bearing": 0.5920974244010553,
+    "closingSpeed": 2.349705450897335
+   }
+  }
+ },
+ {
+  "id": 135,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 771.2446866917867,
+   "verticalVelocity": -6.541181553929373,
+   "horizontalVelocity": -12.017729642724955,
+   "orientation": -0.5,
+   "padOffset": 535.6002534094063,
+   "fuel": 87.57999999999953,
+   "terrainSlope": 22.879540449688346,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 919.9340427757649,
+    "deltaX": -535.6002534094063,
+    "deltaY": 747.9378393994668,
+    "bearing": -0.6214515448416323,
+    "closingSpeed": 1.6787093114022984
+   }
+  }
+ },
+ {
+  "id": 136,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 335.66778052465804,
+   "verticalVelocity": 18.713928737877257,
+   "horizontalVelocity": -11.366850949265213,
+   "orientation": 0,
+   "padOffset": 120.82303388420502,
+   "fuel": 70.72000000000003,
+   "terrainSlope": -3.9620601491416845,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 354.3067734384361,
+    "deltaX": -120.82303388420502,
+    "deltaY": 333.06918828881714,
+    "bearing": -0.3479937336480737,
+    "closingSpeed": 21.468430868542246
+   }
+  }
+ },
+ {
+  "id": 137,
+  "scenario": "random #1 (seed 7, pad 341)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 467.0830735189476,
+   "verticalVelocity": 10.379562843705736,
+   "horizontalVelocity": -12.908071360400289,
+   "orientation": -0.5,
+   "padOffset": 202.8127741062964,
+   "fuel": 72.7039999999999,
+   "terrainSlope": -0.3850592153516208,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 341,
+    "targetY": 1005.276807102475,
+    "range": 508.71428419446886,
+    "deltaX": -202.8127741062964,
+    "deltaY": 466.53746002094965,
+    "bearing": -0.41007398032408,
+    "closingSpeed": 14.665160539001496
+   }
+  }
+ },
+ {
+  "id": 138,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 710.6729701634316,
+   "verticalVelocity": 20.275495854022378,
+   "horizontalVelocity": -11.496859833014835,
+   "orientation": 0,
+   "padOffset": 249.39021109599628,
+   "fuel": 89.19999999999959,
+   "terrainSlope": -5.259780185050108,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 731.5734492261975,
+    "deltaX": -249.39021109599628,
+    "deltaY": 687.7530328702376,
+    "bearing": -0.34786945648719575,
+    "closingSpeed": 22.980246323907245
+   }
+  }
+ },
+ {
+  "id": 139,
+  "scenario": "random #2 (seed 7, pad 742)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 823.9912228799571,
+   "verticalVelocity": 10.162051882807042,
+   "horizontalVelocity": -11.554349423439454,
+   "orientation": 0,
+   "padOffset": 248.59322888399458,
+   "fuel": 84.1239999999994,
+   "terrainSlope": -5.259780185050108,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 742,
+    "targetY": 1005.9862808640966,
+    "range": 838.687221143592,
+    "deltaX": -248.59322888399458,
+    "deltaY": 800.997916016384,
+    "bearing": -0.3009289672220914,
+    "closingSpeed": 13.130181471454849
+   }
+  }
+ },
+ {
+  "id": 140,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 767.8246269697022,
+   "verticalVelocity": 6.2959259767533995,
+   "horizontalVelocity": 12.004686245961661,
+   "orientation": 0,
+   "padOffset": -137.2894156302957,
+   "fuel": 87.03999999999951,
+   "terrainSlope": -2.077921449632238,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 782.873062519943,
+    "deltaX": 137.2894156302957,
+    "deltaY": 770.7411033383692,
+    "bearing": 0.17627764427317447,
+    "closingSpeed": 8.303575131922669
+   }
+  }
+ },
+ {
+  "id": 141,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 764.2595407238983,
+   "verticalVelocity": -4.964024566202495,
+   "horizontalVelocity": 11.252947001430272,
+   "orientation": 0.5,
+   "padOffset": -235.2718031937651,
+   "fuel": 87.79599999999954,
+   "terrainSlope": -5.855040424076777,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 798.1175061787967,
+    "deltaX": 235.2718031937651,
+    "deltaY": 762.6524321675084,
+    "bearing": 0.29922885293485213,
+    "closingSpeed": -1.426261506195068
+   }
+  }
+ },
+ {
+  "id": 142,
+  "scenario": "random #3 (seed 7, pad 667)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 34.29897326825471,
+   "verticalVelocity": 2.978665718734658,
+   "horizontalVelocity": -0.41456611706129415,
+   "orientation": 0.03342372936527795,
+   "padOffset": -0.2216993624628003,
+   "fuel": 41.40926225007735,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 667,
+    "targetY": 1009.0195994998817,
+    "range": 34.29968976337494,
+    "deltaX": 0.2216993624628003,
+    "deltaY": 34.29897326825471,
+    "bearing": 0.0064636417331176066,
+    "closingSpeed": 2.975923908416482
+   }
+  }
+ },
+ {
+  "id": 143,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 523.7231941582718,
+   "verticalVelocity": 20.841028770562517,
+   "horizontalVelocity": -0.19260749321924078,
+   "orientation": 0,
+   "padOffset": -0.991301031220928,
+   "fuel": 70.07999999999925,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 523.7241323226164,
+    "deltaX": 0.991301031220928,
+    "deltaY": 523.7231941582718,
+    "bearing": 0.0018927934803039989,
+    "closingSpeed": 20.840626871349254
+   }
+  }
+ },
+ {
+  "id": 144,
+  "scenario": "random #4 (seed 7, pad 1865)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 765.5216573582986,
+   "verticalVelocity": 4.70573162490184,
+   "horizontalVelocity": 1.7288151241405612,
+   "orientation": 0,
+   "padOffset": -4.655722987541367,
+   "fuel": 70.8939999999989,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1865,
+    "targetY": 979.9686453492711,
+    "range": 765.5358147344466,
+    "deltaX": 4.655722987541367,
+    "deltaY": 765.5216573582986,
+    "bearing": 0.006081690233461533,
+    "closingSpeed": 4.716158653067431
+   }
+  }
+ },
+ {
+  "id": 145,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 765.346240683941,
+   "verticalVelocity": -1.5000740232465972,
+   "horizontalVelocity": -12.074686245961662,
+   "orientation": 0,
+   "padOffset": 311.2259096109135,
+   "fuel": 87.03999999999951,
+   "terrainSlope": -3.9533972268977466,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 829.1356855749732,
+    "deltaX": -311.2259096109135,
+    "deltaY": 768.507916862761,
+    "bearing": -0.3847871462894178,
+    "closingSpeed": 3.1419905001604906
+   }
+  }
+ },
+ {
+  "id": 146,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 51.34019801811462,
+   "verticalVelocity": 3.7756442829899646,
+   "horizontalVelocity": -0.06000683274884142,
+   "orientation": 0.004859312471501655,
+   "padOffset": -1.9037300353540445,
+   "fuel": 51.47703393354259,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 51.37548170661498,
+    "deltaX": 1.9037300353540445,
+    "deltaY": 51.34019801811462,
+    "bearing": 0.0370637102926382,
+    "closingSpeed": 3.7708276767338376
+   }
+  }
+ },
+ {
+  "id": 147,
+  "scenario": "random #5 (seed 7, pad 451)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 182.76137138281717,
+   "verticalVelocity": 21.08502884778994,
+   "horizontalVelocity": -0.6666139449996275,
+   "orientation": 0.05416061600594421,
+   "padOffset": 4.14376342957587,
+   "fuel": 66.03199999999993,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 451,
+    "targetY": 1008.7168483358571,
+    "range": 182.80834128969144,
+    "deltaX": -4.14376342957587,
+    "deltaY": 182.76137138281717,
+    "bearing": -0.02266919731223249,
+    "closingSpeed": 21.09472166942495
+   }
+  }
+ },
+ {
+  "id": 148,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 830.8686220789048,
+   "verticalVelocity": 20.563197193873478,
+   "horizontalVelocity": -0.7022722317193031,
+   "orientation": 0,
+   "padOffset": -6.141492659984124,
+   "fuel": 74.07999999999902,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 830.8913196606344,
+    "deltaX": 6.141492659984124,
+    "deltaY": 830.8686220789048,
+    "bearing": 0.007391518527107758,
+    "closingSpeed": 20.5574446550128
+   }
+  }
+ },
+ {
+  "id": 149,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 934.1879832541144,
+   "verticalVelocity": -9.612640515810483,
+   "horizontalVelocity": -0.4299999999999996,
+   "orientation": 0,
+   "padOffset": 6.370384920458946,
+   "fuel": 73.539999999999,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 934.2097033645201,
+    "deltaX": -6.370384920458946,
+    "deltaY": 934.1879832541144,
+    "bearing": -0.006819062430903416,
+    "closingSpeed": -9.60948485052626
+   }
+  }
+ },
+ {
+  "id": 150,
+  "scenario": "random #6 (seed 7, pad 1941)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 370.888672934306,
+   "verticalVelocity": 19.438277655135135,
+   "horizontalVelocity": -0.02069651412387677,
+   "orientation": 0,
+   "padOffset": -4.79144181292736,
+   "fuel": 53.939999999999394,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1941,
+    "targetY": 1014.9006291729329,
+    "range": 370.91962151606003,
+    "deltaX": 4.79144181292736,
+    "deltaY": 370.888672934306,
+    "bearing": 0.012918095461388336,
+    "closingSpeed": 19.43638842300053
+   }
+  }
+ },
+ {
+  "id": 151,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 512.3996126919149,
+   "verticalVelocity": 16.159197193873368,
+   "horizontalVelocity": -0.36227223171930284,
+   "orientation": 0,
+   "padOffset": 2.2297657891468816,
+   "fuel": 74.07999999999902,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 512.4044642099625,
+    "deltaX": -2.2297657891468816,
+    "deltaY": 512.3996126919149,
+    "bearing": -0.004351587431732393,
+    "closingSpeed": 16.16062065062047
+   }
+  }
+ },
+ {
+  "id": 152,
+  "scenario": "random #7 (seed 7, pad 475)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 592.4822491195409,
+   "verticalVelocity": 8.910855175892163,
+   "horizontalVelocity": -1.1102175461497428,
+   "orientation": 0.5,
+   "padOffset": 10.396448157531893,
+   "fuel": 74.56599999999904,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 475,
+    "targetY": 1007.0258777673694,
+    "range": 592.5734567596173,
+    "deltaX": -10.396448157531893,
+    "deltaY": 592.4822491195409,
+    "bearing": -0.017545473006708837,
+    "closingSpeed": 8.928961928680494
+   }
+  }
+ },
+ {
+  "id": 153,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 857.6131548350828,
+   "verticalVelocity": 3.603925976753402,
+   "horizontalVelocity": 11.514686245961663,
+   "orientation": 0,
+   "padOffset": -192.7269136238474,
+   "fuel": 87.03999999999951,
+   "terrainSlope": -6.987983707379124,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 870.1076907780133,
+    "deltaX": 192.7269136238474,
+    "deltaY": 848.4949795467695,
+    "bearing": 0.2233501247418867,
+    "closingSpeed": 6.064884950903083
+   }
+  }
+ },
+ {
+  "id": 154,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 39.18155830977753,
+   "verticalVelocity": 3.086719143501049,
+   "horizontalVelocity": 0.00942574684507874,
+   "orientation": -0.0007603900148789222,
+   "padOffset": 3.0186040989635785,
+   "fuel": 45.747989501507554,
+   "terrainSlope": 0,
+   "phase": "landing",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 39.29766509970759,
+    "deltaX": -3.0186040989635785,
+    "deltaY": 39.18155830977753,
+    "bearing": -0.07688956781915887,
+    "closingSpeed": 3.0768752596914535
+   }
+  }
+ },
+ {
+  "id": 155,
+  "scenario": "random #8 (seed 7, pad 1531)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 199.1796372649169,
+   "verticalVelocity": 19.95237364894527,
+   "horizontalVelocity": -0.2433487308635314,
+   "orientation": 0,
+   "padOffset": -9.652224550636674,
+   "fuel": 63.73999999999953,
+   "terrainSlope": 0,
+   "phase": "descent",
+   "landingRay": {
+    "targetX": 1531,
+    "targetY": 1013.7717541454765,
+    "range": 199.4133730213693,
+    "deltaX": 9.652224550636674,
+    "deltaY": 199.1796372649169,
+    "bearing": 0.048422015792526064,
+    "closingSpeed": 19.91720830553817
+   }
+  }
+ },
+ {
+  "id": 156,
+  "scenario": "random #9 (seed 7, pad 655)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 505.1961407564979,
+   "verticalVelocity": 21.303197193873594,
+   "horizontalVelocity": 0.2777277682806964,
+   "orientation": 0,
+   "padOffset": 5.895814555488187,
+   "fuel": 74.07999999999902,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 655,
+    "targetY": 1009.402292844195,
+    "range": 505.2305426877239,
+    "deltaX": -5.895814555488187,
+    "deltaY": 505.196140756498,
+    "bearing": -0.011669817794770457,
+    "closingSpeed": 21.298505667247277
+   }
+  }
+ },
+ {
+  "id": 157,
+  "scenario": "random #9 (seed 7, pad 655)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 655.6532842034366,
+   "verticalVelocity": 11.81953258384383,
+   "horizontalVelocity": -2.0810873558598644,
+   "orientation": 0,
+   "padOffset": 16.23250887553195,
+   "fuel": 76.1859999999991,
+   "terrainSlope": 0,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 655,
+    "targetY": 1009.402292844195,
+    "range": 655.8541937284128,
+    "deltaX": -16.23250887553195,
+    "deltaY": 655.6532842034366,
+    "bearing": -0.024752706850829236,
+    "closingSpeed": 11.867419160766287
+   }
+  }
+ },
+ {
+  "id": 158,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 150,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 840.7869728623243,
+   "verticalVelocity": 8.387925976753403,
+   "horizontalVelocity": 12.70468624596166,
+   "orientation": 0,
+   "padOffset": -386.6319176367522,
+   "fuel": 87.03999999999951,
+   "terrainSlope": -9.44333689400211,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 902.2457062373063,
+    "deltaX": 386.6319176367522,
+    "deltaY": 815.2073813994714,
+    "bearing": 0.44285607132307975,
+    "closingSpeed": 13.022989520374326
+   }
+  }
+ },
+ {
+  "id": 159,
+  "scenario": "random #10 (seed 7, pad 1775)",
+  "latencyMs": 300,
+  "expected": "coast",
+  "reason": "on_plan",
+  "telemetry": {
+   "altitude": 864.6945878854915,
+   "verticalVelocity": -0.9811202579052063,
+   "horizontalVelocity": 12.973164547580014,
+   "orientation": 0,
+   "padOffset": -459.91427648387366,
+   "fuel": 86.7699999999995,
+   "terrainSlope": 0.8928197316017167,
+   "phase": "approach",
+   "landingRay": {
+    "targetX": 1775,
+    "targetY": 989.2547991237893,
+    "range": 949.0024137523005,
+    "deltaX": 459.91427648387366,
+    "deltaY": 830.1111007533916,
+    "bearing": 0.5059392057185519,
+    "closingSpeed": 5.428969088681489
+   }
+  }
+ }
+]

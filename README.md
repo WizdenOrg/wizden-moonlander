@@ -58,16 +58,18 @@ Both models receive byte-identical state and questions; only the endpoint, auth 
 | Example text | "DANGER: descending too fast. Falling at 14 m/s needs about 100 m to stop, but only 63 m of altitude remain. The engine must brake now." | "Altitude above the ground: 63 m. Vertical speed: falling at 14.0 m/s. Gravity adds 1.62 m/s … A braking burn removes about 3.2 m/s … Safe touchdown requires a downward speed below 4.5 m/s." |
 | The model's job | Confirm the stated conclusion | Work out the decision |
 
-Measured results (decisions: agreement with the flight plan on 120–160 labelled states; landings: missions flown in the headless simulator):
+Measured on 2026-09-24 with `scripts/benchmark.js`: both models, the same 160 labelled flight states (decisions) and the same 32 flights (16 missions × 150/300 ms reaction delay). Laya 0.3.5 `english` on a Colab T4 GPU; JEV `jev-1.13.0`. Full summary: [`benchmarks/results/2026-09-24-gpu/summary.md`](benchmarks/results/2026-09-24-gpu/summary.md).
 
 | Prompt | Laya decisions | Laya landings | JEV decisions | JEV landings |
 | --- | --- | --- | --- | --- |
-| Raw telemetry numbers, one 4-way choice | 28% | 0/12 | 33% | — |
-| Guided | 100% | 31/32 | 100% | 32/32 |
-| Facts only, no briefing | — | — | 25% | 0/6 |
-| Facts only + "Flight rules" briefing | — | — | — | 14/20 |
+| Raw telemetry numbers, one 4-way choice | 25.0% | 0/32 | 31.9% | 0/32 |
+| Guided, one 4-way choice | 68.8% | 0/32 | 100% | 32/32 |
+| Guided, three yes/no (default) | 100% | 32/32 | 100% | 32/32 |
+| Computed numbers + rule, no verdict | 20.6% | 0/32 | 80.0% | 32/32 |
+| Facts only, no briefing | 25.0% | 0/32 | 25.0% | 0/32 |
+| Facts only + "Flight rules" briefing | 25.0% | 0/32 | 53.1% | 22/32 |
 
-With raw numbers, both models pick one direction for almost every state. With facts only and no briefing, JEV brakes in every state and hovers until the fuel runs out. Its brake scores rise with danger but stay above the threshold. Briefings written as lookup tables ("falling 20 m/s: brake below 220 m") work where formulas and plain intent do not. The "Flight rules" example also says "brake if altitude is below 50 m", which gives soft touchdowns. A dash means not measured.
+With raw numbers, both models pick one direction for almost every state. Guided, both fly identically. In facts-only mode both brake in every state and hover until the fuel runs out. JEV follows lookup-table briefings ("falling 20 m/s: brake below 220 m") and can compare numbers it is given; Laya only acts on stated conclusions and ignores briefings.
 
 ## Tests and evaluation
 
@@ -76,6 +78,8 @@ npm test                                                   # offline: physics, g
 LAYA_URL=... LAYA_TOKEN=... JEV_KEY=... npm run test:live   # live acceptance per configured model (others are skipped)
 JEV_KEY=... npm run eval:lander -- --provider jev --variants binary,facts --random 10
 ```
+
+For the full comparison, put `LAYA_URL`, `LAYA_TOKEN` and `JEV_KEY` in a file and run `node scripts/benchmark.js --env path/to/file.env` (all prompt cases, both models, about 30 minutes; `--providers`, `--cases`, `--per-label`, `--random`, `--seed` narrow it). It writes every call (exact state sent, raw scores, timing, model version) and a `summary.md` to `benchmarks/results/<run>/`. Credentials are never written. Raw call logs are git-ignored; summaries are committed.
 
 `scripts/lander-eval.js` flies the headless simulator (`src/lander-sim.js`) against a live model. It reports per-decision accuracy (confusion matrix, per-reason hit rate) and closed-loop landings, and saves JSON reports to `eval-results/`. Options include `--provider laya|jev`, `--variants`, `--briefing "..."`, `--random N --seed S`, `--latency 150,300`, and `--probes-only` / `--flights-only`.
 
@@ -89,7 +93,8 @@ src/relay.js       decision relay: validation, origin check, rate limit, endpoin
 src/lander-sim.js  headless simulator for tests and evaluation
 server.js          local server: static files + relay
 api/lander/        the relay as a Vercel function (decide.js)
-scripts/           live evaluation
+scripts/           live evaluation and the full benchmark
+benchmarks/        benchmark results (summaries)
 test/              offline suite and live acceptance suite
 laya-service/      Colab script that serves Laya with a temporary public URL
 ```
